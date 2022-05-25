@@ -1,4 +1,4 @@
-@extends('template.layout')
+@extends('HomePage.layout')
 @section('content')
 
 <div class="content-header">

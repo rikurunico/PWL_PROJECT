@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+
+Route::get('/login', function () {
+    return view('Loginpage.login');
+}) -> name('LoginPage');
+
+Route::post('/login', [LoginController::class, 'login']) -> name('login');
