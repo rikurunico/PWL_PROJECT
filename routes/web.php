@@ -26,3 +26,5 @@ Route::get('/login', function () {
 }) -> name('LoginPage');
 
 Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+
+Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');

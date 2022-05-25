@@ -10,8 +10,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return ('Login Berhasil');
+            return redirect()->route('HomePage');
         }
-        return ('Login Gagal');
+        return redirect()->route('LoginPage');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('LoginPage');
     }
 }
