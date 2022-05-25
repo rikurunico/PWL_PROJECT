@@ -19,7 +19,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+
 
 Route::get('/login', function () {
     return view('Loginpage.login');
@@ -28,3 +28,7 @@ Route::get('/login', function () {
 Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
 
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+});
