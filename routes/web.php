@@ -20,10 +20,9 @@ Route::get('/', function () {
 });
 
 
-
 Route::get('/login', function () {
     return view('Loginpage.login');
-}) -> name('LoginPage');
+}) -> name('LoginPage') -> middleware('guest');
 
 Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
 
