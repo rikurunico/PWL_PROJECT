@@ -10,4 +10,9 @@ class HomePageController extends Controller
     {
         return view('HomePage.index');
     }
+
+    function profile()
+    {
+        return view('HomePage.profile');
+    }
 }

@@ -9,7 +9,9 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('LoginPage.register');
+        return view('LoginPage.register', [
+            'tittle' => 'Register Page',
+        ]);
     }
 
     public function store(Request $request)
@@ -19,6 +21,7 @@ class RegisterController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed|min:8'
         ]);
+
 
         $user = new User;
         $user->name = $request->name;

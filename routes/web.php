@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('Loginpage.login');
+    return view('Loginpage.login',
+        ['tittle' => 'Login Page']);
 }) -> name('LoginPage') -> middleware('guest');
 
 Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage');
@@ -29,8 +30,11 @@ Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage
 
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+    Route::get('/profile', [HomePageController::class, 'profile']) -> name('ProfilePage');
 });
 
 
