@@ -12,7 +12,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->route('HomePage');
         }
-        return redirect()->route('LoginPage');
+        return back()->with('loginError', 'Login Failed!');
     }
 
     public function logout(Request $request)

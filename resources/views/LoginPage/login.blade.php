@@ -12,6 +12,18 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
+      @if (session()->has('success'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('success') }}
+          </div>
+      @endif      
+      
+      @if (session()->has('loginError'))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ session('loginError') }}
+          </div>
+          
+      @endif
       <p class="login-box-msg">Masuk Untuk Melanjutkan</p>
 
       <form action="{{ route('login') }}" method="post">
