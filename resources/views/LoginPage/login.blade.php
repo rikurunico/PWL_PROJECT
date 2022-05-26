@@ -14,12 +14,14 @@
     <div class="card-body login-card-body">
       @if (session()->has('success'))
           <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>	
               {{ session('success') }}
           </div>
       @endif      
       
       @if (session()->has('loginError'))
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
               {{ session('loginError') }}
           </div>
           

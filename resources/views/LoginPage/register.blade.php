@@ -11,14 +11,14 @@
   </div>
 
   <div class="card">
+    
     <div class="card-body register-card-body">
-      @error('password')
-      <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-      
-      @error('password_confirmation')
-      <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
+    @if ($message = Session::get('error'))
+	  <div class="alert alert-danger alert-block">
+		<button type="button" class="close" data-dismiss="alert">×</button>	
+		  <strong>{{ $message }}</strong>
+	  </div>
+	  @endif
       <p class="login-box-msg">Masukkan Data Diri Anda</p>
 
       <form action="{{ route('register') }}" method="post">

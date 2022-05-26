@@ -16,20 +16,24 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $validator = $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:8'
-        ]);
+        try{
+            $validator = $this->validate($request, [
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|confirmed|min:8'
+            ]);
 
-
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->level = 'user';
-        $user->save();
-
-        return redirect('/login')->with('success', 'Registration Success! Please Login');
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->level = 'user';
+            $user->save();
+    
+            return redirect('/login')->with('success', 'Registrasi Anda Berhasil! Silahkan Login');
+        }
+        catch(\Exception $e){
+            return redirect('/register')->with('error', 'Data Yang Anda Masukkan Sudah Ada Atau Salah');
+        }
     }
 }
