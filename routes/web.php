@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +20,21 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-
 Route::get('/login', function () {
     return view('Loginpage.login');
 }) -> name('LoginPage') -> middleware('guest');
 
-Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage');
+
 
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
 });
+
+
+
+Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+
+Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');

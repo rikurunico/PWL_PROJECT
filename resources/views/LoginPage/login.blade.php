@@ -51,7 +51,7 @@
 
       <div class="social-auth-links text-center mb-3">
       <p class="mb-0">
-        <a href="#" class="text-center">Register</a>
+        <a href="{{ route('RegisterPage') }}" class="text-center">Register</a>
       </p>
     </div>
     <!-- /.login-card-body -->
