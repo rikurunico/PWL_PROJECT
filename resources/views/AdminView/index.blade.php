@@ -29,6 +29,7 @@
           <tr>
             <th>ID</th>
             <th>Nama</th>
+            <th>Email</th>
             <th>Dibuat pada tanggal</th>
             <th>Role Akun</th>
           </tr>
@@ -38,12 +39,15 @@
           <tr>
             <td>{{ $member->id}}</td>
             <td>{{ $member->name}}</td>
+            <td>{{ $member->email}}</td>
             <td>{{ $member->created_at}}</td>
             <td>{{ $member->level}}</td>
           </tr>
           @endforeach
           </tfoot>
         </table>
+        <br>
+        {{ $dataMember->links() }}
       </div>
       <!-- /.card-body -->
     </div>
