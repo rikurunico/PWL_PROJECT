@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
     function index()
     {
-        return view('HomePage.index',['tittle' => 'Home Page',
+        $data = Product::all();
+        return view('HomePage.index',['barang' => $data],['tittle' => 'Home Page',
         ]);
     }
 
@@ -16,4 +17,5 @@ class HomePageController extends Controller
     {
         return view('HomePage.profile',['tittle' => 'Profile Page']);
     }
+
 }

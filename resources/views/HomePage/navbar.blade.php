@@ -8,6 +8,15 @@
         <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Shop</a>
+        <!-- <a class="nav-link" data-toggle="dropdown" href="#">Shop</a>
+          <ul class="header__menu__dropdown">
+                <li><a href=".#">Shop Details</a></li>
+                <li><a href=".#">Shoping Cart</a></li>
+                <li><a href=".#">Check Out</a></li>
+          </ul> -->
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
     </ul>

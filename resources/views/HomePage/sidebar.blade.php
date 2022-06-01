@@ -58,6 +58,23 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery Product
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                About Us
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
