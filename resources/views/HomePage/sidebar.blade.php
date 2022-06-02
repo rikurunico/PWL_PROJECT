@@ -57,20 +57,42 @@
               </li>
             </ul>
           </li>
+          </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Gallery Product
+              Gallery Product
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('GalleryPage') }}" class="nav-link {{ ($tittle === "Gallery Page") ? 'active' : ''}}"">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bahan Dapur</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/charts/flot.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Perlengkapan Mandi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/charts/inline.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Makanan Instan</p>
+                </a>
+              </li>
+            </ul>
           </li>
           
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
-                About Us
+                Payment Gateway
               </p>
             </a>
           </li>

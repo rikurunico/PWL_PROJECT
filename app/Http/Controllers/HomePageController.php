@@ -18,4 +18,10 @@ class HomePageController extends Controller
         return view('HomePage.profile',['tittle' => 'Profile Page']);
     }
 
+    function gallery()
+    {
+        return view('HomePage.gallery',['tittle' => 'Gallery Page']);
+    }
+
+
 }

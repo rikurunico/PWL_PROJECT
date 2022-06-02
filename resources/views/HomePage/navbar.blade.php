@@ -5,17 +5,19 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.blade.php" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Shop</a>
-        <!-- <a class="nav-link" data-toggle="dropdown" href="#">Shop</a>
-          <ul class="header__menu__dropdown">
-                <li><a href=".#">Shop Details</a></li>
-                <li><a href=".#">Shoping Cart</a></li>
-                <li><a href=".#">Check Out</a></li>
-          </ul> -->
-      </li>
+      <div class="dropdown">
+        <button class="btn b dropdown-toggle" type="" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+          Shop
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Shop Details</a>
+            <a class="dropdown-item" href="#">Shoping Cart</a>
+            <a class="dropdown-item" href="#">Check Out</a>
+          </div>
+        </div>
+      
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>

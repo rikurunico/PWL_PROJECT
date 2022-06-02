@@ -40,6 +40,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
 Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/profile', [HomePageController::class, 'profile']) -> name('ProfilePage');
+    Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage');
 });
 
 
