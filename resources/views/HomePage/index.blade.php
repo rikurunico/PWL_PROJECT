@@ -91,15 +91,15 @@
                             <li data-filter=".dapur">Bahan Dapur</li>
                             <li data-filter=".mandi">Perlengkapan Mandi</li>
                             <li data-filter=".instan">Makanan Instan</li>
-                            <!-- <li data-filter=".fastfood">Fastfood</li> -->
                         </ul>
                     </div>
                 </div>
             </div>
 
+            
             <div class="row featured__filter">
+                @foreach ($barang as $b)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix dapur mandi instan">
-                  @foreach ($barang as $b)
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{$b->gambar}}">
                             <ul class="featured__item__pic__hover">
@@ -113,13 +113,23 @@
                             <h5>{{$b ->harga}}</h5>
                         </div>
                     </div> 
-                  @endforeach
                 </div>   
+                @endforeach 
             </div>
         </div>
   </section>
   <!-- Featured Section End -->
-
+  <div class="card card-primary card-outline">
+    <div class="card-body text-white bg-info">
+    <h3 class="section-title-2 text-uppercase font-weight-300 text-center" ><b>Our</b> <span class="blue-text">Information</span></h3>
+    <br></br>
+            <div class="row">
+                  <p class="justify-text">Barang yang sudah dibeli tidak dapat dikembalikan lagi karena barang yang dikirim sudah melewati proses pengecekan dan dipastikan dalam kondisi baik. Sehingga apabila ada keterlambatan, kerusakan maupun kehilangan barang pada saat pengiriman. 
+                      Hal tersebut berada diluar tanggung jawab kami</p>
+                
+                </div>
+            </div>
+        </div>
 
 
 @endsection
