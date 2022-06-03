@@ -35,6 +35,7 @@ Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
+    Route::get('/dataProduct', [AdminController::class, 'dataproduct']) -> name('DataProductPage');
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {

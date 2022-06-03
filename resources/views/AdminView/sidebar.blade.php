@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('HomePage') }} " class="nav-link {{ ($tittle === "Home Page") ? 'active' : ''}}">
+            <a href="{{ route('HomePageAdmin') }} " class="nav-link {{ ($tittle === "Home Page") ? 'active' : ''}}">
             <i class="bi bi-speedometer2"></i>
               <p>
                 Dashboard
@@ -53,7 +53,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('GalleryPage') }}" class="nav-link {{ ($tittle === "Gallery Page") ? 'active' : ''}}"">
+                <a href="{{ route('DataProductPage') }}" class="nav-link {{ ($tittle === "Data Product") ? 'active' : ''}}"">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Product</p>
                 </a>

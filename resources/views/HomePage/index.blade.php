@@ -26,7 +26,7 @@
   
   <section class="hero">
             <div class="row">
-                  <div class="hero__item set-bg" style="background-size: 150vh 400px;" data-setbg="{{asset('img/hero/banner2.png')}}">
+                  <div class="hero__item set-bg"  data-setbg="{{asset('img/hero/banner2.png')}}">
                     <div class="hero__text">
                       <span>TOKO SEMBAKO FAST</span>
                       <h2> Segala Macam Sembako <br />100% Halal</h2>
@@ -43,27 +43,27 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" style="height: 400px;"data-setbg="{{asset('img/categories/minyak.png')}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/minyak.png')}}">
                             <h5><a href="#">Minyak Goreng</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"style="height: 400px;" data-setbg="{{asset('img/categories/sabun.png')}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/sabun.png')}}">
                             <h5><a href="#">Sabun</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"style="height: 400px;" data-setbg="{{asset('img/categories/gula.png')}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/gula.png')}}">
                             <h5><a href="#">Gula</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"style="height: 400px;" data-setbg="{{asset('img/categories/tepung.png')}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/tepung.png')}}">
                             <h5><a href="#">Tepung</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" style="height: 400px;"data-setbg="{{asset('img/categories/telur.png')}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/telur.png')}}">
                             <h5><a href="#">Telur</a></h5>
                         </div>
                     </div>
