@@ -43,27 +43,32 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/minyak.png')}}">
+                        <div class="categories__item set-bg">
+                            <img src="{{asset('img/categories/minyak.png')}}" style="width: 100%; height: 100%">
                             <h5><a href="#">Minyak Goreng</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/sabun.png')}}">
+                        <div class="categories__item set-bg" data-setbg="">
+                            <img src="{{asset('img/categories/sabun.png')}}" style="width: 100%; height: 100%">
                             <h5><a href="#">Sabun</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/gula.png')}}">
+                        <div class="categories__item set-bg">
+                            <img src="{{asset('img/categories/gula.png')}}" style="width: 100%; height: 100%">
                             <h5><a href="#">Gula</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/tepung.png')}}">
+                        <div class="categories__item set-bg">
+                            <img src="{{asset('img/categories/tepung.png')}}" style="width: 100%; height: 100%">
                             <h5><a href="#">Tepung</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('img/categories/telur.png')}}">
+                        <div class="categories__item set-bg">
+                            <img src="{{asset('img/categories/telur.png')}}" style="width: 100%; height: 100%">
                             <h5><a href="#">Telur</a></h5>
                         </div>
                     </div>
