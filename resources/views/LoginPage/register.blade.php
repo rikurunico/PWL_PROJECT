@@ -43,6 +43,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
+          <input type="nomor" class="form-control" name="nomor" placeholder="masukkan nomor HP">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
           <input type="password" class="form-control" name="password" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
@@ -51,10 +59,10 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password_confirmation" placeholder="Retype password">
+          <input type="password" class="form-control" name="password_confirmation" placeholder="Masukkan Ulang password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fa fa-lock"></span>
             </div>
           </div>
         </div>
