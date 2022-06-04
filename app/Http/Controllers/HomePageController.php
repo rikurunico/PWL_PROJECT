@@ -24,5 +24,9 @@ class HomePageController extends Controller
         return view('HomePage.gallery',['galeri' => $data1], ['tittle' => 'Gallery Page']);
     }
 
+    function contact()
+    {
+        return view('HomePage.contact',[], ['tittle' => 'Contact Page']);
+    }
 
 }

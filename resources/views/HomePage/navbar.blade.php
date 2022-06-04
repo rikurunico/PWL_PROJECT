@@ -19,7 +19,7 @@
         </div>
       
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+      <a href="{{ route('ContactPage') }} " class="nav-link {{ ($tittle === "Contact Page") ? 'active' : ''}}" class="nav-link">Contact</a>
       </li>
     </ul>
 
