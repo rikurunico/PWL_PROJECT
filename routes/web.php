@@ -26,9 +26,9 @@ Route::get('/login', function () {
         ['tittle' => 'Login Page']); 
 }) -> name('LoginPage') -> middleware('guest');
 
+
+
 Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage')->middleware('guest');
-
-
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 

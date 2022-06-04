@@ -57,12 +57,29 @@
                 <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
-                ...
+              <div class="modal-body" >
+                <form action="#" method="post" enctype="multipart/form-data">
+                  @csrf
+                  @method('PUT')
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" placeholder="Nama" name="name" required="required" value="{{$member->name}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" placeholder="Email" name="email" required="required" value="{{$member->email}}">
+                  </div>
+                  <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label">Role</label>
+                    <div class="col-md-6">
+                        <select name="city" id="city" class="form-control">
+                          <option value="admin">admin</option>
+                          <option value="user">user</option>
+                        </select>
+                    </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
