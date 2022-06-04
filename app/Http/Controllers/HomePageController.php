@@ -20,7 +20,8 @@ class HomePageController extends Controller
 
     function gallery()
     {
-        return view('HomePage.gallery',['tittle' => 'Gallery Page']);
+        $data1 = Product::all();
+        return view('HomePage.gallery',['galeri' => $data1], ['tittle' => 'Gallery Page']);
     }
 
 
