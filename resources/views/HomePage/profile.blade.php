@@ -15,8 +15,10 @@
     <div class="container rounded bg-white mt-3 mb-3">
     <div class="row">
         <div class="col-md-5 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{ auth()->user()->foto }}"><span class="font-weight-bold">{{ auth()->user()->name }}</span><span class="text-black-50">{{ auth()->user()->email }}</span></div>
-            <input type="file" class="form-control"required="required" name="featured_image"></br>	
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <img class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}" alt="">
+              <span class="font-weight-bold">{{ auth()->user()->name }}</span><span class="text-black-50">{{ auth()->user()->email }}</span>
+            </div>	
         </div>
 
         <div class="col-md-7 border-right" style="text-transform: capitalize">
@@ -50,6 +52,13 @@
                             </div>
                             <form action="{{ route('updateDataUser') }}" method="post" enctype="multipart/form-data">
                               @csrf
+                              <div class="d-flex flex-column align-items-center" style="text-transform: none">
+                                <img class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
+                              </div>	
+                              <div class="mb-3">
+                                <label for="formFile" class="form-label">upload photo profile</label>
+                                <input class="form-control" name="foto" type="file" id="formFile" accept="image/*" >
+                              </div>
                               <div class="row mt-2">
                                 <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" name="name" placeholder=" username" value="{{ auth()->user()->name }}"></div>
                               </div>
