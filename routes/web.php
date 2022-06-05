@@ -43,10 +43,9 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/profile', [HomePageController::class, 'profile']) -> name('ProfilePage');
     Route::get('/contact', [HomePageController::class, 'contact']) -> name('ContactPage');
     Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage');
+    Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');
 });
-
 
 
 Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
 Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');
-Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');

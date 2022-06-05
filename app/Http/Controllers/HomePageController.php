@@ -28,12 +28,12 @@ class HomePageController extends Controller
 
     function contact()
     {
-        return view('HomePage.contact',[], ['tittle' => 'Contact Page']);
-    }
+        return view('HomePage.contact', ['tittle' => 'Contact Page']);
+    }   
 
     function updateDataUser(Request $request)
     {
-        
+
         $user = User::find(Auth::user()->id);
         $user->name = $request->name;
         $user->email = $request->email;
