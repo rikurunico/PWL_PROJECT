@@ -55,9 +55,14 @@
                               <div class="d-flex flex-column align-items-center" style="text-transform: none">
                                 <img class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
                               </div>	
-                              <div class="mb-3">
+                              <div class="row mt-2">
+                                <div class="col-md-12">
                                 <label for="formFile" class="form-label">upload photo profile</label>
-                                <input class="form-control" name="foto" type="file" id="formFile" accept="image/*" >
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="inputGroupFile02" name="foto" accept="image/*">
+                                  <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                                </div>
                               </div>
                               <div class="row mt-2">
                                 <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" name="name" placeholder=" username" value="{{ auth()->user()->name }}"></div>
