@@ -33,10 +33,13 @@ class HomePageController extends Controller
 
     function updateDataUser(Request $request)
     {
-
+        if($request -> file('foto')){
+            $foto = $request->file('foto')->store('photoUser', 'public');
+        }
         $user = User::find(Auth::user()->id);
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->foto = $foto;
         $user->notelp = $request->notelp;
         $user->alamat = $request->alamat;
 

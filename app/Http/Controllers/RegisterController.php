@@ -30,7 +30,7 @@ class RegisterController extends Controller
         $user->notelp = $request->nomor;
         $user->password = bcrypt($request->password);
         $user->level = 'user';
-        $user->foto = 'src/img/default.jpg';
+        $user->foto = 'photoUser/default.jpg';
         $user->save();
 
         return redirect('/login')->with('success', 'Registration Success! Please Login');
