@@ -48,19 +48,24 @@
                         <div class="p-3 py-5">
                                 <h4 class="text-center">Edit Profile</h4>
                             </div>
-                            <div class="row mt-2">
-                              <div class="col-md-12"><label class="labels">username</label><input type="text" class="form-control" placeholder=" username" value="{{ auth()->user()->name }}"></div>
-                            </div>
-                            <div class="row mt-2">
-                              <div class="col-md-12"><label class="labels">nomor telepon</label><input type="text" class="form-control" placeholder="enter nomor telepon" value="{{ auth()->user()->notelp }}"></div>
-                            </div>
-                            <div class="row mt-2">
-                              <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value="{{ auth()->user()->email }}"></div>
-                            </div>
-                            <div class="row mt-2">
-                              <div class="col-md-12"><label class="labels">alamat</label><input type="text" class="form-control" placeholder="enter alamat" value="{{ auth()->user()->alamat }}"></div>
-                            </div>
-                            <div class="mt-4 mb-3 text-center"><button class="btn btn-info profile-button" type="button">Save Profile</button></div>
+                            <form action="{{ route('updateDataUser') }}" method="post" enctype="multipart/form-data">
+                              @csrf
+                              <div class="row mt-2">
+                                <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" name="name" placeholder=" username" value="{{ auth()->user()->name }}"></div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" name="email" placeholder=" Email" value="{{ auth()->user()->email }}"></div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-12"><label class="labels">Nomor Telepon</label><input type="text" class="form-control" name="notelp" placeholder=" Nomor Telepon" value="{{ auth()->user()->notelp }}"></div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-md-12"><label class="labels">Alamat</label><input type="text" class="form-control" name="alamat" placeholder=" Alamat" value="{{ auth()->user()->alamat }}"></div>
+                              </div>
+                              <div class="mt-4 mb-3 text-center">
+                                <button class="btn btn-info profile-button" type="submit">Save Profile</button>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>

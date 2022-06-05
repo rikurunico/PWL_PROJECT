@@ -48,5 +48,5 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
 
 
 Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
-
 Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');
+Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');

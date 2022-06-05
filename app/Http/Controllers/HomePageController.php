@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomePageController extends Controller
 {
@@ -29,4 +31,16 @@ class HomePageController extends Controller
         return view('HomePage.contact',[], ['tittle' => 'Contact Page']);
     }
 
+    function updateDataUser(Request $request)
+    {
+        
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->notelp = $request->notelp;
+        $user->alamat = $request->alamat;
+
+        $user->save();
+        return redirect('/profile');
+    }
 }
