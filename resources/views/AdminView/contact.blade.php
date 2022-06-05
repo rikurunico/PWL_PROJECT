@@ -1,4 +1,4 @@
-@extends('HomePage.layout')
+@extends('AdminView.layout')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -116,4 +116,12 @@
         </div>
     </div>
     <!-- Contact Form End -->
+    <!-- Css Styles -->
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     @endsection

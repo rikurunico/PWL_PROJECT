@@ -12,7 +12,7 @@ class AdminController extends Controller
     {
         $dataMember = User::all();
         $dataMember = User::orderBy('level', 'asc')->paginate(5);
-        return view('AdminView.index',['tittle' => 'Home Page',
+        return view('AdminView.index',['tittle' => 'Home Page Admin',
             'dataMember' => $dataMember,
         ]);
     }
@@ -24,5 +24,10 @@ class AdminController extends Controller
         return view('AdminView.dataProduct',['tittle' => 'Data Product',
             'dataProduct' => $dataProduk,
         ]);
+    }
+
+    function contact()
+    {
+        return view('AdminView.contact',[], ['tittle' => 'Contact Admin']);
     }
 }
