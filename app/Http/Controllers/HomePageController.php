@@ -43,4 +43,9 @@ class HomePageController extends Controller
         $user->save();
         return redirect('/profile');
     }
+
+    function checkout()
+    {
+        return view('HomePage.checkout', ['tittle' => 'Checkout Page']);
+    } 
 }

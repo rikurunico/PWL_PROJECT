@@ -14,7 +14,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Shop Details</a>
             <a class="dropdown-item" href="#">Shoping Cart</a>
-            <a class="dropdown-item" href="#">Check Out</a>
+            <a class="dropdown-item" href="{{ route('CheckoutPage') }} " class="nav-link {{ ($tittle === "Checkout Page ") ? 'active' : ''}}" class="nav-link">Check Out</a>
           </div>
         </div>
       

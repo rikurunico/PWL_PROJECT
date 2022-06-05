@@ -1,8 +1,6 @@
 @extends('HomePage.layout')
 @section('content')
 
- <!-- Content Wrapper. Contains page content -->
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
