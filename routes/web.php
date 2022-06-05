@@ -45,6 +45,7 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/contact', [HomePageController::class, 'contact']) -> name('ContactPage');
     Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage');
     Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');
+    Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
 });
 
 
