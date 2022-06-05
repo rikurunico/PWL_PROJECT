@@ -50,5 +50,10 @@ class HomePageController extends Controller
     function checkout()
     {
         return view('HomePage.checkout', ['tittle' => 'Checkout Page']);
+    }
+    
+    function shopingcart()
+    {
+        return view('HomePage.shopingcart', ['tittle' => 'Shoping Card | Shop']);
     } 
 }
