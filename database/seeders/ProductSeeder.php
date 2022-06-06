@@ -18,6 +18,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Minyak Goreng ',
                 'kategori' => 'Bahan Dapur',
                 'merk' => 'Bimoli',
+                'stok' => '50',
                 'harga' => 28000,
                 'gambar' =>'img/featured/minyak.png'
             ],
@@ -25,6 +26,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Gula Pasir',
                 'kategori' => 'Bahan Dapur',
                 'merk' => 'Gulaku',
+                'stok' => '100',
                 'harga' => 12000,
                 'gambar' =>'img/featured/gula.png'
             ],
@@ -32,6 +34,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Telur',
                 'kategori' => 'Bahan Dapur',
                 'merk' => 'Golden Imune',
+                'stok' => '30',
                 'harga' => 24000,
                 'gambar' =>'img/featured//telur.png'
             ],
@@ -39,6 +42,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Tepung Terigu',
                 'kategori' => 'Bahan Dapur',
                 'merk' => 'Segitiga Biru',
+                'stok' => '60',
                 'harga' => 10000,
                 'gambar' =>'img/featured/tepung.png'
             ],
@@ -46,6 +50,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Shampoo',
                 'kategori' => 'Perlengkan Mandi',
                 'merk' => 'clear',
+                'stok' => '100',
                 'harga' => 25000,
                 'gambar' =>'img/featured/clear.png'
             ],
@@ -53,6 +58,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Sabun Batang',
                 'kategori' => 'Perlengkan Mandi',
                 'merk' => 'Lifebuoy',
+                'stok' => '80',
                 'harga' => 3000,
                 'gambar' =>'img/featured/sabun.png'
             ],
@@ -60,6 +66,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Pasta gigi',
                 'kategori' => 'Perlengkan Mandi',
                 'merk' => 'Pepsodent',
+                'stok' => '20',
                 'harga' => 13000,
                 'gambar' =>'img/featured/peps.png'
             ],
@@ -67,6 +74,7 @@ class ProductSeeder extends Seeder
                 'product' => 'Mie Goreng',
                 'kategori' => 'Makanan Instan',
                 'merk' => 'Indomie',
+                'stok' => '120',
                 'harga' => 2500,
                 'gambar' =>'img/featured/mie.png'
             ]

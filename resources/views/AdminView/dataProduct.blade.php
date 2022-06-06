@@ -197,8 +197,10 @@ $(document).ready(function(){
                         <th>Product</th>						
                         <th>Kategori</th>
                         <th>Merk</th>
+                        <th>Stok</th>
                         <th>Harga</th>
                         <th>Gambar</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -209,6 +211,7 @@ $(document).ready(function(){
                         <td>{{ $dp->product}}</td>
                         <td>{{ $dp->kategori}}</td>
                         <td>{{ $dp->merk}}</td>
+                        <td>{{ $dp->stok}}</td>
                         <td>{{ $dp->harga}}</td>
                         <td><img src="{{ asset($dp->gambar) }}" width="100px" height="100px"></td>
                         <td><span class="status text-success">&bull;</span> Active</td>

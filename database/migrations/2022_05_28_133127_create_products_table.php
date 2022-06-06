@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string ('product',100);
             $table->string ('kategori',100);
             $table->string ('merk',100);
+            $table->integer ('stok');
             $table->integer ('harga');
             $table->string ('gambar',100);
             $table->timestamps();
