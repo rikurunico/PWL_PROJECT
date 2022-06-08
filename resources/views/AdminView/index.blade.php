@@ -28,8 +28,10 @@
           <thead>
           <tr>
             <th>ID</th>
+            <th>Foto</th>
             <th>Nama</th>
             <th>Email</th>
+            <th>Nomor Telepon</th>
             <th>Dibuat pada tanggal</th>
             <th>Role Akun</th>
             <th>Action</th>
@@ -39,51 +41,23 @@
             @foreach ($dataMember as $member)
           <tr>
             <td>{{ $member->id}}</td>
+            <td>
+              <img src="{{ asset('storage/'. $member->foto)}}" class="img-fluid img-thumbnail" style="width: 60px; margin-top: -6px;">
+            </td>
             <td>{{ $member->name}}</td>
             <td>{{ $member->email}}</td>
+            <td>{{ $member->notelp}}</td>
             <td>{{ $member->created_at}}</td>
             <td>{{ $member->level}}</td>
             <td>
               <!-- Button trigger modal -->
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-info">
           Edit
         </button>
+        Form Edit Button
+        <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}"></form>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body" >
-                <form action="#" method="post" enctype="multipart/form-data">
-                  @csrf
-                  @method('PUT')
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" placeholder="Nama" name="name" required="required" value="{{$member->name}}">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" placeholder="Email" name="email" required="required" value="{{$member->email}}">
-                  </div>
-                  <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label">Role</label>
-                    <div class="col-md-6">
-                        <select name="city" id="city" class="form-control">
-                          <option value="admin">admin</option>
-                          <option value="user">user</option>
-                        </select>
-                    </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+          
             </td>
           </tr>
           @endforeach
