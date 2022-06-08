@@ -12,7 +12,31 @@
         </div>
       </div>
     </div>
+    
     <div class="container rounded bg-white mt-3 mb-3">
+      @if ($errors->any())
+            <div class="alert alert-danger">
+              <strong>Whoops!</strong> Inputan Kamu Ada Yang Salah<br><br>
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+          </div>
+      @endif
+      @if (session()->has('success'))
+          <div class="alert alert-success">
+            @if(is_array(session('success')))
+                <ul>
+                    @foreach (session('success') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+            @else
+                {{ session('success') }}
+            @endif
+          </div>
+        @endif
     <div class="row">
         <div class="col-md-5 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">

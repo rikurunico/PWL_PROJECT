@@ -32,19 +32,33 @@ class HomePageController extends Controller
     }   
 
     function updateDataUser(Request $request)
-    {
-        if($request -> file('foto')){
-            $foto = $request->file('foto')->store('photoUser', 'public');
-        }
-        $user = User::find(Auth::user()->id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->foto = $foto;
-        $user->notelp = $request->notelp;
-        $user->alamat = $request->alamat;
+    {   
+        //validate laravel
+        $this->validate($request,[
+            'email' => 'email|unique:users,email,'.Auth::user()->id,
+            'notelp' => 'numeric|unique:users,notelp,'.Auth::user()->id,
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
-        $user->save();
-        return redirect('/profile');
+        if($request -> hasFile('foto')){
+            $foto = $request->file('foto')->store('photoUser', 'public');
+            $user = User::find(Auth::user()->id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->foto = $foto;
+            $user->notelp = $request->notelp;
+            $user->alamat = $request->alamat;
+            $user->save();
+            return redirect('/profile') -> with('success', 'Data berhasil diubah');
+        } else {
+            $user = User::find(Auth::user()->id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->notelp = $request->notelp;
+            $user->alamat = $request->alamat;
+            $user->save();
+            return redirect('/profile') -> with('success', 'Data berhasil diubah');
+        }
     }
 
     function checkout()
