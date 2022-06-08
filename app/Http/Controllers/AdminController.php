@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Supplier;
+use App\Models\Transaksi;
 
 class AdminController extends Controller
 {
@@ -37,6 +38,14 @@ class AdminController extends Controller
         $dataSupplier = Supplier::orderBy('id', 'asc')->paginate(3);
         return view('AdminView.dataSuplier',['tittle' => 'Data Supplier',
             'dataSupplier' => $dataSupplier,
+        ]);
+    }
+    function datapenjualan()
+    {
+        $dataPenjualan = Transaksi::all();
+        $dataPenjualan = Transaksi::orderBy('id', 'asc')->paginate(3);
+        return view('AdminView.dataPenjualan',['tittle' => 'Data Penjualan',
+            'dataPenjualan' => $dataPenjualan,
         ]);
     }
 }

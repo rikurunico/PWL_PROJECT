@@ -59,7 +59,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+              <a href="{{ route('DataPenjualanPage') }}" class="nav-link {{ ($tittle === "Data Supplier") ? 'active' : ''}}"">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Data Penjualan</p>
                 </a>
@@ -74,6 +74,12 @@
                 <a href="pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Data Pembayaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/charts/flot.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Data Pengiriman</p>
                 </a>
               </li>
             </ul>

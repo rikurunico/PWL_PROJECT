@@ -37,6 +37,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
     Route::get('/dataProduct', [AdminController::class, 'dataproduct']) -> name('DataProductPage');
     Route::get('/dataSupplier', [AdminController::class, 'datasupplier']) -> name('DataSupplierPage');
+    Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
 });
 
