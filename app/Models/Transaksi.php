@@ -14,5 +14,11 @@ class Transaksi extends Model
     public function users(){
     	return $this->belongsTo(User::class);
     }
+
+    //one to one from transaksi to payments
+    public function payments()
+    {
+    	return $this->hasOne(Payment::class);
+    }
 }
 
