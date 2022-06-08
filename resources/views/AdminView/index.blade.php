@@ -54,9 +54,10 @@
         <button type="button" class="btn btn-info">
           Edit
         </button>
-        Form Edit Button
-        <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}"></form>
-
+          <a href="delete/{{$member->id}}" class="btn btn-md btn-danger" onclick="return confirm('yakin?');">
+            Delete
+          </a>
+        </td>
           
             </td>
           </tr>

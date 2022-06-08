@@ -39,6 +39,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/dataSupplier', [AdminController::class, 'datasupplier']) -> name('DataSupplierPage');
     Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
+    Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeleteUser');
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
