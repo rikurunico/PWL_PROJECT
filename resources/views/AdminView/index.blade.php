@@ -54,7 +54,8 @@
         <button type="button" class="btn btn-info">
           Edit
         </button>
-          <a href="delete/{{$member->id}}" class="btn btn-md btn-danger" onclick="return confirm('yakin?');">
+        
+          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('yakin?');">
             Delete
           </a>
         </td>
