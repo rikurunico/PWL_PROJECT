@@ -20,7 +20,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Bimoli',
                 'stok' => '50',
                 'harga' => 28000,
-                'gambar' =>'img/featured/minyak.png'
+                'gambar' =>'img/featured/minyak.png',
+                'supplier_id' => '1'
             ],
             [
                 'product' => 'Gula Pasir',
@@ -28,7 +29,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Gulaku',
                 'stok' => '100',
                 'harga' => 12000,
-                'gambar' =>'img/featured/gula.png'
+                'gambar' =>'img/featured/gula.png',
+                'supplier_id' => '1'
             ],
             [
                 'product' => 'Telur',
@@ -36,7 +38,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Golden Imune',
                 'stok' => '30',
                 'harga' => 24000,
-                'gambar' =>'img/featured//telur.png'
+                'gambar' =>'img/featured//telur.png',
+                'supplier_id' => '2'
             ],
             [
                 'product' => 'Tepung Terigu',
@@ -44,7 +47,9 @@ class ProductSeeder extends Seeder
                 'merk' => 'Segitiga Biru',
                 'stok' => '60',
                 'harga' => 10000,
-                'gambar' =>'img/featured/tepung.png'
+                'gambar' =>'img/featured/tepung.png',
+                'supplier_id' => '1'
+                
             ],
             [
                 'product' => 'Shampoo',
@@ -52,7 +57,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'clear',
                 'stok' => '100',
                 'harga' => 25000,
-                'gambar' =>'img/featured/clear.png'
+                'gambar' =>'img/featured/clear.png',
+                'supplier_id' => '1'
             ],
             [
                 'product' => 'Sabun Batang',
@@ -60,7 +66,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Lifebuoy',
                 'stok' => '80',
                 'harga' => 3000,
-                'gambar' =>'img/featured/sabun.png'
+                'gambar' =>'img/featured/sabun.png',
+                'supplier_id' => '1'
             ],
             [
                 'product' => 'Pasta gigi',
@@ -68,7 +75,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Pepsodent',
                 'stok' => '20',
                 'harga' => 13000,
-                'gambar' =>'img/featured/peps.png'
+                'gambar' =>'img/featured/peps.png',
+                'supplier_id' => '1'
             ],
             [
                 'product' => 'Mie Goreng',
@@ -76,7 +84,8 @@ class ProductSeeder extends Seeder
                 'merk' => 'Indomie',
                 'stok' => '120',
                 'harga' => 2500,
-                'gambar' =>'img/featured/mie.png'
+                'gambar' =>'img/featured/mie.png',
+                'supplier_id' => '1'
             ]
         ]);
     }

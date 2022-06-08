@@ -15,10 +15,10 @@ class TransaksiSeeder extends Seeder
     {
         DB::table('transaksi')->insert([
             [
+                'qty' => '2',
+                'Tangaal_beli' => \Carbon\Carbon::createFromDate(2000,01,01)->toDateTimeString(),
                 'user_id' => '1 ',
                 'product_id' => '1',
-                'qty' => '2',
-                
             ],
         ]);
     }

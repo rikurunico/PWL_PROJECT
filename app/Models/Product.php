@@ -10,4 +10,8 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
     protected $primarykey = 'id';
+
+    public function suppliers(){
+    	return $this->belongsTo(Supplier::class);
+    }
 }

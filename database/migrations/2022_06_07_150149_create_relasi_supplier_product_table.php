@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransaksiTable extends Migration
+class CreateRelasiSupplierProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateTransaksiTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi', function (Blueprint $table) {
-            $table->id();
-            $table->integer('qty');
-            $table->date('Tangaal_beli');
-            $table->timestamps();
+        Schema::table ('products', function (Blueprint $table) {
+            $table->unsignedBigInteger('supplier_id');
+            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateTransaksiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi');
+        Schema::dropIfExists('relasi_supplier_product');
     }
 }
