@@ -71,7 +71,6 @@ class AdminController extends Controller
         return redirect('/profileAdmin');
     }
 
-
     function destroy($id)
     {
         $data = User::find($id);

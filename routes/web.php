@@ -21,17 +21,15 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/login', function () {
-    return view('Loginpage.login',
-        ['tittle' => 'Login Page']); 
-}) -> name('LoginPage') -> middleware('guest');
-
-
-
-Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage')->middleware('guest');
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function () { return view('Loginpage.login', ['tittle' => 'Login Page']); }) -> name('LoginPage');
+    Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+    Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');
+    Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage');
+});
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
@@ -54,6 +52,3 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/shopingcart', [HomePageController::class, 'shopingcart']) -> name('shopingCart');
 });
 
-
-Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
-Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');
