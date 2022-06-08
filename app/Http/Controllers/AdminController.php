@@ -11,8 +11,7 @@ class AdminController extends Controller
 {
     function index()
     {
-        $dataMember = User::all();
-        $dataMember = User::orderBy('level', 'asc')->paginate(5);
+        $dataMember = User::orderBy('level', 'asc')->where('level', 'user')->paginate(5);
         return view('AdminView.index',['tittle' => 'Home Page Admin',
             'dataMember' => $dataMember,
         ]);
