@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Supplier;
 use App\Models\Transaksi;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -52,6 +53,24 @@ class AdminController extends Controller
             'dataPenjualan' => $dataPenjualan,
         ]);
     }
+
+    
+    function updateDataAdmin(Request $request)
+    {
+        if($request -> file('foto')){
+            $foto = $request->file('foto')->store('photoUser', 'public');
+        }
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->foto = $foto;
+        $user->notelp = $request->notelp;
+        $user->alamat = $request->alamat;
+
+        $user->save();
+        return redirect('/profileAdmin');
+    }
+
 
     function destroy($id)
     {

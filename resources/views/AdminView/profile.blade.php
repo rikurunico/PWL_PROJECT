@@ -50,7 +50,7 @@
                         <div class="p-3 py-5">
                                 <h4 class="text-center">Edit Profile</h4>
                             </div>
-                            <form action="{{ route('updateDataUser') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('PostProfileAdmin') }}" method="post" enctype="multipart/form-data">
                               @csrf
                               <div class="d-flex flex-column align-items-center" style="text-transform: none">
                                 <img class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">

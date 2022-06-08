@@ -17,7 +17,7 @@
     </section>
 
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="{{asset('img/kontak.png')}}">
+<section class="breadcrumb-section set-bg" style="background-image: url('{{asset('img/kontak.png')}}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
