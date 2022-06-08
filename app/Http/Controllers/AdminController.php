@@ -17,6 +17,10 @@ class AdminController extends Controller
             'dataMember' => $dataMember,
         ]);
     }
+    function profile()
+    {
+        return view('AdminView.profile',[],['tittle' => 'Profile Page']);
+    }
 
     function dataproduct()
     {

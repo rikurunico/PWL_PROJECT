@@ -42,6 +42,12 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+          <a href="{{ route('ProfilePageAdmin') }} " class="nav-link {{ ($tittle === "Profile Page") ? 'active' : ''}}">
+          <i class="bi bi-person-badge"></i>
+              <p>Profile</p>
+            </a>
+          </li>
          
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -59,7 +65,7 @@
                 </a>
               </li>
               <li class="nav-item">
-              <a href="{{ route('DataPenjualanPage') }}" class="nav-link {{ ($tittle === "Data Supplier") ? 'active' : ''}}"">
+              <a href="{{ route('DataPenjualanPage') }}" class="nav-link {{ ($tittle === "Data Penjualan") ? 'active' : ''}}"">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Data Penjualan</p>
                 </a>
