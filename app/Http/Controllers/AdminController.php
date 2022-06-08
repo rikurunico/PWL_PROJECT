@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Supplier;
 
 class AdminController extends Controller
 {
@@ -29,5 +30,14 @@ class AdminController extends Controller
     function contact()
     {
         return view('AdminView.contact',[], ['tittle' => 'Contact Admin']);
+    }
+
+    function datasupplier()
+    {
+        $dataSupplier = Supplier::all();
+        $dataSupplier = Supplier::orderBy('id', 'asc')->paginate(3);
+        return view('AdminView.dataSuplier',['tittle' => 'Data Supplier',
+            'dataSupplier' => $dataSupplier,
+        ]);
     }
 }
