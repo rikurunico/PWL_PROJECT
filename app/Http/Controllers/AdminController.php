@@ -48,4 +48,11 @@ class AdminController extends Controller
             'dataPenjualan' => $dataPenjualan,
         ]);
     }
+
+    function destroy($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return redirect('/homeAdmin');
+    }
 }
