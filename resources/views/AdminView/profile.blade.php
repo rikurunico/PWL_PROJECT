@@ -53,13 +53,13 @@
                             <form action="{{ route('PostProfileAdmin') }}" method="post" enctype="multipart/form-data">
                               @csrf
                               <div class="d-flex flex-column align-items-center" style="text-transform: none">
-                                <img class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
+                                <img id="preview-image-before-upload" class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
                               </div>	
                               <div class="row mt-2">
                                 <div class="col-md-12">
                                 <label for="formFile" class="form-label">upload photo profile</label>
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputGroupFile02" name="foto" accept="image/*">
+                                  <input id="image" type="file" class="custom-file-input" id="inputGroupFile02" name="foto" accept="image/*">
                                   <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
                                 </div>
                                 </div>
@@ -93,7 +93,29 @@
 </div>
 </div>
 </div>       
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+      
+$(document).ready(function (e) {
+
+  
+  $('#image').change(function(){
+            
+    let reader = new FileReader();
+
+    reader.onload = (e) => { 
+
+      $('#preview-image-before-upload').attr('src', e.target.result); 
+    }
+
+    reader.readAsDataURL(this.files[0]); 
+  
+  });
+  
+});
+
+</script>
  
 @endsection
