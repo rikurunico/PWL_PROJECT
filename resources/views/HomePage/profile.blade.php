@@ -77,7 +77,7 @@
                             <form action="{{ route('updateDataUser') }}" method="post" enctype="multipart/form-data">
                               @csrf
                               <div class="d-flex flex-column align-items-center" style="text-transform: none">
-                                <img id="preview-image-before-upload" class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
+                                <img id="preview-image-before-upload"  class="rounded-circle mt-5" width="150px" src="{{ asset('storage/'.auth()->user()->foto) }}">
                               </div>	
                               <div class="row mt-2">
                                 <div class="col-md-12">

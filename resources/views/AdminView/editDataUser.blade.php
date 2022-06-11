@@ -8,11 +8,11 @@
                 <form method="post" enctype="multipart/form-data" action="{{ route('UpdateUser', [$user->id]) }}" id="myForm" >
                 @csrf
                 <div class="form-group">
-                    <label for="foto">Foto Profil</label>
                     <div class="d-flex flex-column align-items-center" style="text-transform: none">
                         <img id="preview-image-before-upload" class="rounded-circle mt-5" width="150px" src="/storage/{{ $user->foto }}"">
                     </div>
-                    <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="/storage/{{ $user->foto }}">
+                    <label for="foto">Foto Profil</label>
+                    <input type="file" id="image" class="form-control @error('foto') is-invalid @enderror" name="foto" value="/storage/{{ $user->foto }}">
                     @error('foto')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
-                    <input type="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old( 'alamat', $user->alamat) }}" required >
+                    <input type="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old( 'alamat', $user->alamat) }}" >
                     @error('alamat')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -70,4 +70,26 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+        
+    $(document).ready(function (e) {
+    
+    $('#image').change(function(){
+                
+        let reader = new FileReader();
+    
+        reader.onload = (e) => { 
+    
+        $('#preview-image-before-upload').attr('src', e.target.result); 
+        }
+    
+        reader.readAsDataURL(this.files[0]); 
+    
+    });
+    
+    });
+    
+</script>
+
 @endsection
