@@ -40,6 +40,8 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
     Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeleteUser');
+    Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
+    Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {

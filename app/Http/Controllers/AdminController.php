@@ -85,6 +85,48 @@ class AdminController extends Controller
         }
     }
 
+    function edit($id)
+    {
+        $user = User::find($id);
+        return view('AdminView.editDataUser',['tittle' => 'Edit Data User',
+            'user' => $user,
+        ]);
+    }
+
+    function updateDataUser(Request $request, $id)
+    {
+        //validate laravel
+
+        $this->validate($request,[
+            'email' => 'email|unique:users,email,'.$id,
+            'notelp' => 'numeric|unique:users,notelp,'.$id,
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($request -> hasFile('foto')){
+            $foto = $request->file('foto')->store('photoUser', 'public');
+            $user = User::find($id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->foto = $foto;
+            $user->notelp = $request->notelp;
+            $user->alamat = $request->alamat;
+            $user->level = $request->level;
+            $user->save();
+            return redirect('/homeAdmin') -> with('success', 'Data berhasil diubah');
+        } else {
+            $user = User::find($id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->notelp = $request->notelp;
+            $user->alamat = $request->alamat;
+            $user->level = $request->level;
+            $user->save();
+            return redirect('/homeAdmin') -> with('success', 'Data berhasil diubah');
+        }
+
+    }
+
     function destroy($id)
     {
         $data = User::find($id);

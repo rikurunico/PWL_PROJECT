@@ -22,6 +22,7 @@
       <div class="card-header">
         <h3 class="card-title">DataTable akun pada toko</h3>
       </div>
+      
       <!-- /.card-header -->
       <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -51,11 +52,11 @@
             <td>{{ $member->level}}</td>
             <td>
               <!-- Button trigger modal -->
-        <button type="button" class="btn btn-info">
-          Edit
-        </button>
+        <a href="{{ route('EditUser', $member->id) }}" class="btn btn-md btn-info">
+            Info
+          </a>
         
-          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('yakin?');">
+          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Yakin Hapus Data?');">
             Delete
           </a>
         </td>
