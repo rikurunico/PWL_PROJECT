@@ -5,6 +5,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,12 +40,14 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/dataSupplier', [AdminController::class, 'datasupplier']) -> name('DataSupplierPage');
     Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
-    Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeleteUser');
+   
     Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
     Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
     Route::get('/printdata', [AdminController::class, 'cetakDataUser']) -> name('CetakDataUser');
     Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
+    Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeletePengguna');
+    // Route::get('/delete/{id}', [ProductController::class, 'destroyproduct']) -> name('DeleteProduct');
 
 });
 

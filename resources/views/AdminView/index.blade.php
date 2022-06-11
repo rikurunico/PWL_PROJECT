@@ -66,7 +66,7 @@
             
               <a href="{{ route('EditUser', $member->id) }}" class="btn btn-md btn-info">Edit</a>
         
-          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">
+          <a href="{{ route('DeletePengguna', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">
             Delete
           </a>
         </td>

@@ -220,7 +220,7 @@ $(document).ready(function(){
                         <td>
                            
                         <a href="#" class="btn btn-md btn-warning">Edit</a>
-                        <a href="{{ route('DeleteProduct') }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
+                        <a href="{{ route('DeleteProduct $dataProduct->id') }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
                 </tbody>
