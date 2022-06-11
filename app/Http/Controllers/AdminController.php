@@ -141,4 +141,44 @@ class AdminController extends Controller
         $pdf = PDF::loadView('AdminView.cetakDataUser',['dataUser' => $dataUser]);
         return $pdf->download('Data User.pdf');
     }
+
+    // create data user
+    public function createUser()
+    {
+        return view('AdminView.createDataUser',['tittle' => 'Create Data User' 
+    ]);
+    }
+    // fungsi store data user
+    public function storeUser(Request $request)
+    {
+       
+       //melakukan validasi data
+       $request->validate([
+        'name' => 'required',
+        'email' => ['required', 'email:dns', 'unique:users,email,'],
+        'notelp' => ['required', 'numeric', 'unique:users,notelp,'],
+        'alamat' => 'required',
+        'level' => 'required',
+        'password' => 'required',
+        'foto'=>'required',
+
+        ]);
+
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
+
+        $user = new User;
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->foto = $image_name;
+        $user->notelp = $request->get('notelp');
+        $user->alamat = $request->get('alamat');
+        $user->level = $request->get('level');
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return redirect('/homeAdmin') -> with('success', 'Data berhasil Ditambahkan');
+    }
+
 }

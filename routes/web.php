@@ -43,6 +43,9 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
     Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
     Route::get('/printdata', [AdminController::class, 'cetakDataUser']) -> name('CetakDataUser');
+    Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
+    Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
+
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
@@ -54,4 +57,3 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
     Route::get('/shopingcart', [HomePageController::class, 'shopingcart']) -> name('shopingCart');
 });
-

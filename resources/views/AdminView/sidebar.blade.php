@@ -38,7 +38,7 @@
             <a href="{{ route('HomePageAdmin') }} " class="nav-link {{ ($tittle === "Home Page Admin") ? 'active' : ''}}">
             <i class="bi bi-speedometer2"></i>
               <p>
-                Dashboard
+                Data Pengguna
               </p>
             </a>
           </li>
@@ -82,20 +82,9 @@
                   <p> Data Pembayaran</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Data Pengiriman</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                <i class="bi bi-file-earmark-post-fill"></i>
-                  <p> Laporan Penjualan</p>
-                </a>
-              </li>
+      
 
           
           <li class="nav-item bg-danger">

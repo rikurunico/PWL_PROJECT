@@ -216,10 +216,11 @@ $(document).ready(function(){
                         <td>{{ $dp->stok}}</td>
                         <td>{{ $dp->harga}}</td>
                         <td><img src="{{ asset($dp->gambar) }}" width="100px" height="100px"></td>
-                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td><span class="status text-success">&bull;</span> Tersedia</td>
                         <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                           
+                        <a href="#" class="btn btn-md btn-warning">Edit</a>
+                        <a href="{{ route('DeleteProduct') }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
                 </tbody>
@@ -228,18 +229,7 @@ $(document).ready(function(){
             <br>
             {{ $dataProduct->links() }}
             </br>
-            <!-- <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-            </div> -->
+
         </div>
     </div>
 </div>     
