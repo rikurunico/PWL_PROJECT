@@ -47,7 +47,6 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
     Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeletePengguna');
-    // Route::get('/delete/{id}', [ProductController::class, 'destroyproduct']) -> name('DeleteProduct');
 
 });
 

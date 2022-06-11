@@ -25,7 +25,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
-            <a href="{{ route('CreateUser') }}" class="btn btn-outline-success"><i class="fas fa-edit"> Input User</i></a>
+            <a href="{{ route('CreateUser') }}" class="btn btn-outline-success" style="margin: 10px"><i class="fas fa-edit"> Input User</i></a>
             <a href="{{ route('CetakDataUser') }}" class="btn btn-outline-danger"><i class="fas fa-edit"> Export To PDF</i></a>
           </div>
         </div>
