@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Supplier;
 use App\Models\Transaksi;
 use Auth;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -132,5 +133,12 @@ class AdminController extends Controller
         $data = User::find($id);
         $data->delete();
         return redirect('/homeAdmin');
+    }
+
+    function cetakDataUser()
+    {
+        $dataUser = User::all();
+        $pdf = PDF::loadView('AdminView.cetakDataUser',['dataUser' => $dataUser]);
+        return $pdf->download('Data User.pdf');
     }
 }

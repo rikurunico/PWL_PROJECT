@@ -42,6 +42,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeleteUser');
     Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
     Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
+    Route::get('/printdata', [AdminController::class, 'cetakDataUser']) -> name('CetakDataUser');
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {

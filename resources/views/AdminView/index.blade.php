@@ -22,6 +22,13 @@
       <div class="card-header">
         <h3 class="card-title">DataTable akun pada toko</h3>
       </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="{{ route('CetakDataUser') }}" class="btn btn-outline-danger"><i class="fas fa-edit"> Export To PDF</i></a>
+          </div>
+        </div>
+        <br>
       
       <!-- /.card-header -->
       <div class="card-body">
@@ -53,10 +60,10 @@
             <td>
               <!-- Button trigger modal -->
         <a href="{{ route('EditUser', $member->id) }}" class="btn btn-md btn-info">
-            Info
+            Edit
           </a>
         
-          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Yakin Hapus Data?');">
+          <a href="{{ route('DeleteUser', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Yakin Ingin Menghapus Data Ini?');">
             Delete
           </a>
         </td>
