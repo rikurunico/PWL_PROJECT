@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Supplier;
+
+class SuplierController extends Controller
+{
+    function create () {
+        return view('AdminView.DataSuplier.create')->with('tittle', 'Create Supplier');
+    }
+
+    function store (Request $request) {
+        $this->validate($request, [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'telp' => 'required|unique:suppliers',
+        ]);
+
+        $suppliers = new Supplier;
+        $suppliers->nama = $request->nama;
+        $suppliers->alamat = $request->alamat;
+        $suppliers->telp = $request->telp;
+        $suppliers->save();
+
+        return redirect('/dataSupplier');
+    }
+
+    function postUpdateSuplier (Request $request, $id) {
+        $this->validate($request, [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'telp' => 'required|unique:suppliers',
+        ]);
+
+        $suppliers = Supplier::find($id);
+        $suppliers->nama = $request->nama;
+        $suppliers->alamat = $request->alamat;
+        $suppliers->telp = $request->telp;
+        $suppliers->save();
+
+        return redirect('/dataSupplier');
+    }
+}
