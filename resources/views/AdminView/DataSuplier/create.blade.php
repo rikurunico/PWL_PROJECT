@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-                <h3>Form Tambah Data user</h3>
+                <h3>Form Tambah Data Supplier</h3>
 
             <div class="card-body" style="margin-bottom: 145px;">
             @if ($errors->any())

@@ -185,7 +185,7 @@ $(document).ready(function(){
                         <h2>Data <b>Supplier</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="{{ route('CreateSupplier') }}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                        <a href="{{ route('CreateSupplier') }}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Supplier</span></a>
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
                     </div>
                 </div>

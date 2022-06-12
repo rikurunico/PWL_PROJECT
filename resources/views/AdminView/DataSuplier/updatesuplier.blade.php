@@ -4,7 +4,7 @@
         <div class="container" style="text-transform: capitalize">
             <div class="row">
                 <div class="col-md-12 mt-3">
-                    <h3>Form Edit Data user</h3>
+                    <h3>Form Edit Data Supplier</h3>
                 <form method="post" enctype="multipart/form-data" action="{{ route('UpdateSupplier', [$suppliers->id]) }}" id="myForm" >
                 @csrf
                 <div class="form-group">
