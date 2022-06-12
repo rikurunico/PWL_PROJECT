@@ -62,6 +62,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::post('/postUpdateSupplier/{id}', [SuplierController::class, 'postUpdateSuplier']) -> name('PostUpdateSupplier');
     Route::get('/editSupplier/{id}', [SuplierController::class, 'edit']) -> name('EditSupplier');
     Route::post('/updateSupplier/{id}', [SuplierController::class, 'updateDataSupplier']) -> name('UpdateSupplier');
+    Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
 
 });
 

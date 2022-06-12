@@ -48,4 +48,10 @@ class SuplierController extends Controller
 
         return redirect('/dataSupplier');
     }
+
+    function destroy ($id) {
+        $suppliers = Supplier::find($id);
+        $suppliers->delete();
+        return redirect('/dataSupplier');
+    }
 }

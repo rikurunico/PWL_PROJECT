@@ -211,7 +211,7 @@ $(document).ready(function(){
                         <td><span class="status text-success">&bull;</span> Active</td>
                         <td>
                             <a href="{{ route('EditSupplier', $ds->id) }}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <a href="{{ route('DeleteSupplier', $ds->id) }}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
                     </tr>
                 </tbody>
