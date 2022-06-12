@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Supplier;
+use PDF;
 
 class SuplierController extends Controller
 {
@@ -53,5 +54,12 @@ class SuplierController extends Controller
         $suppliers = Supplier::find($id);
         $suppliers->delete();
         return redirect('/dataSupplier');
+    }
+
+    function cetakDataSupplier()
+    {
+        $datasupplier = Supplier::all();
+        $pdf = PDF::loadView('AdminView.DataSuplier.cetakDataSupplier',['datasupplier' => $datasupplier]);
+        return $pdf->download('Data Supplier.pdf');
     }
 }

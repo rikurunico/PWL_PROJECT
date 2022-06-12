@@ -186,7 +186,7 @@ $(document).ready(function(){
                     </div>
                     <div class="col-sm-7">
                         <a href="{{ route('CreateSupplier') }}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Supplier</span></a>
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                        <a href="{{ route('CetakDataSupplier')}}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>
             </div>

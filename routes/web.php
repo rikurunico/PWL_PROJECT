@@ -63,6 +63,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/editSupplier/{id}', [SuplierController::class, 'edit']) -> name('EditSupplier');
     Route::post('/updateSupplier/{id}', [SuplierController::class, 'updateDataSupplier']) -> name('UpdateSupplier');
     Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
+    Route::get('/printSupplier', [SuplierController::class, 'cetakDataSupplier']) -> name('CetakDataSupplier');
 
 });
 
