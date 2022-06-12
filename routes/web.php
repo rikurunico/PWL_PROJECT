@@ -71,9 +71,14 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/profile', [HomePageController::class, 'profile']) -> name('ProfilePage');
     Route::get('/contact', [HomePageController::class, 'contact']) -> name('ContactPage');
-    Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage');
     Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');
     Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
     Route::get('/shopingcart', [HomePageController::class, 'shopingcart']) -> name('shopingCart');
     Route::post('postupdateDataPassword', [HomePageController::class, 'updateDataPassword']) -> name('gantiPassword');
+
+    Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage'); 
+    Route::get('/cart', [HomePageController::class, 'cart'])->name('cart');
+    Route::get('/addcart/{id}', [HomePageController::class, 'addToCart'])->name('AddCart');
+    Route::get('/removecart/{id}', [HomePageController::class, 'removeCart'])->name('removecart');
+    Route::get('/updatecart/{id}', [HomePageController::class, 'updateCart'])->name('updatecart');
 });

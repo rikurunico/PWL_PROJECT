@@ -140,23 +140,27 @@
                       @foreach ($galeri as $g)
                       <div class="col-lg-4 col-md-6 col-sm-6 mix dapur mandi instan">
                           <div class="featured__item">
-                              <div class="featured__item__pic set-bg" data-setbg="{{$g->gambar}}">
-                                  <ul class="featured__item__pic__hover">
-                                      <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                  </ul>
-                              </div>
+                              <div class="featured__item__pic set-bg" data-setbg="{{'storage/'.$g->gambar}}"></div>
                               <div class="featured__item__text">
                               <div class="product__discount__item__text">
                                     <span>{{$g ->kategori}}</span>
                                     <h6><a href="#">{{$g ->product}}</a></h6>
                                     <h5>{{$g ->harga}}</h5>
                               </div>
+                              <p class="btn-holder"><a href=" {{ route('AddCart', $g->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
                               </div>
                           </div> 
                       </div>   
                       @endforeach 
                   </div>
+                  
+            <div class="container">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                    {{ session('success') }}
+                    </div> 
+                @endif
+                <!-- @yield('content') -->
+            </div>
   @endsection
   

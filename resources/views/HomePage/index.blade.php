@@ -101,7 +101,7 @@
                 @foreach ($barang as $b)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix dapur mandi instan">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{$b->gambar}}">
+                        <div class="featured__item__pic set-bg" data-setbg="{{'storage/'.$b->gambar}}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>

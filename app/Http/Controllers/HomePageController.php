@@ -84,4 +84,67 @@ class HomePageController extends Controller
     {
         return view('HomePage.shopingcart', ['tittle' => 'Shoping Card | Shop']);
     } 
+
+    // function shopingcart()
+    public function cart()
+    {
+        return view('cart');
+    }
+
+    public function addToCart($id)
+    {
+        $product = Product::findOrFail($id);
+          
+        $cart = session()->get('cart', []);
+  
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                "product" => $product->product,
+                "quantity" => 1,
+                "kategori" => $product->kategori,
+                "harga" => $product->harga,
+                "gambar" => $product->gambar
+            ];
+        }
+          
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
+  
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function update(Request $request)
+    {
+        if($request->id && $request->quantity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart updated successfully');
+        }
+    }
+  
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function remove(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
+    }
+  
+    
+
 }
