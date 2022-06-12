@@ -28,11 +28,16 @@ class SuplierController extends Controller
         return redirect('/dataSupplier');
     }
 
-    function postUpdateSuplier (Request $request, $id) {
+    function edit ($id) {
+        $suppliers = Supplier::find($id);
+        return view('AdminView.DataSuplier.updatesuplier')->with('tittle', 'Edit Supplier')->with('suppliers', $suppliers);
+    }
+
+    function updateDataSupplier (Request $request, $id) {
         $this->validate($request, [
             'nama' => 'required',
             'alamat' => 'required',
-            'telp' => 'required|unique:suppliers',
+            'telp' => 'required|unique:suppliers,telp,'.$id,
         ]);
 
         $suppliers = Supplier::find($id);
