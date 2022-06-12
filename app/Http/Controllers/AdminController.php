@@ -9,6 +9,8 @@ use App\Models\Supplier;
 use App\Models\Transaksi;
 use Auth;
 use PDF;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 
 class AdminController extends Controller
 {
@@ -26,10 +28,9 @@ class AdminController extends Controller
 
     function dataproduct()
     {
-        $dataProduk = Product::all();
-        $dataProduk = Product::orderBy('id', 'asc')->paginate(5);
+        $dataProduct = Product::orderBy('id', 'asc')->paginate(5);
         return view('AdminView.dataProduct',['tittle' => 'Data Product',
-            'dataProduct' => $dataProduk,
+            'dataProduct' => $dataProduct,
         ]);
     }
 

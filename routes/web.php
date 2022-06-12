@@ -48,6 +48,13 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
     Route::get('/delete/{id}', [AdminController::class, 'destroy']) -> name('DeletePengguna');
 
+    Route::get('/createProduct', [ProductController::class, 'createProduct']) -> name('CreateProduct');
+    Route::post('/postCreateProduct', [ProductController::class, 'storeProduct']) -> name('PostCreateProduct');
+    Route::get('/editProduct/{id}', [ProductController::class, 'editproduct']) -> name('EditProduct');
+    Route::post('/updateProduct/{id}', [ProductController::class, 'updateProduct']) -> name('UpdateProduct');
+    Route::get('/deleteProduct/{id}', [ProductController::class, 'destroyProduct']) -> name('DeleteProduct');
+    Route::get('/printProduct', [ProductController::class, 'cetakDataProduct']) -> name('CetakDataProduct');
+
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
