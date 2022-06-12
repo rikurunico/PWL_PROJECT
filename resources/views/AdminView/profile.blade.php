@@ -13,6 +13,29 @@
       </div>
     </div>
     <div class="container rounded bg-white mt-3 mb-3">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <strong>Whoops!</strong> Inputan Kamu Ada Yang Salah<br><br>
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+    </div>
+@endif
+@if (session()->has('success'))
+    <div class="alert alert-success">
+      @if(is_array(session('success')))
+          <ul>
+              @foreach (session('success') as $message)
+                  <li>{{ $message }}</li>
+              @endforeach
+          </ul>
+      @else
+          {{ session('success') }}
+      @endif
+    </div>
+  @endif
     <div class="row">
         <div class="col-md-5 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -42,6 +65,39 @@
                 
                 <!-- Large modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit Data</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-changepassword-modal-lg">Change Password</button>
+
+                {{-- Modal Change Password --}}
+                <div class="modal fade bd-changepassword-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="{{ route('ChangePasswordAdmin') }}" method="POST">
+                          @csrf
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Current Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Saat Ini" placeholder="Enter current password" name="currentpassword">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">New Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Baru" placeholder="Enter new password" name="password">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Konfirmasi" placeholder="Enter confirm password" name="password_confirmation">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">

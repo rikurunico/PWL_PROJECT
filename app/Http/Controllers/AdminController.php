@@ -87,6 +87,20 @@ class AdminController extends Controller
         }
     }
 
+    function updateDataPassword(Request $request)
+    {
+        //validate laravel
+        $this->validate($request,[
+            'currentpassword'=> 'required|current_password|',
+            'password' => 'required|confirmed',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect('/profileAdmin') -> with('success', 'Password berhasil diubah');
+    }
+
     function edit($id)
     {
         $user = User::find($id);
