@@ -12,7 +12,7 @@ class Supplier extends Model
     protected $primarykey = 'id';
 
     public function products(){
-    	return $this->hasMany(Product::class);
+    	return $this->hasMany('App\Models\Product' , 'supplier_id');
     }
 
 }

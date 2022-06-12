@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         return view('AdminView.editDataProduct',['tittle' => 'Edit Data Product',
-            'user' => $product,
+            'product' => $product,
         ]);
     }
 
@@ -36,34 +36,28 @@ class ProductController extends Controller
             'stok' => 'required',
             'harga' => 'required',
             'gambar' => 'required',
-            'supplier_id' => 'required',
+            'supplier' => 'required',
             
             ]);
 
-            $product = Product::with('suplier_id')->where('id', $id)->first();
+            $product = Product::with('suppliers')->where('id', $id)->first();
             // $product -> id = $request->get('id');
             $product -> product = $request->get('product');
-            
-            if($product->photo_product && file_exists(storage_path('./app/public/'. $product->photo_product))){
-                Storage::delete(['./public/', $product->photo_product]);
-            }
-    
-            $image_name = $request->file('gambar')->store('image', 'public');
-            
-            $product->photo_product = $image_name;
+            $gambar = $request->file('gambar')->store('gambar', 'public');
+            $product -> gambar = $gambar;
             $product -> kategori = $request->get('kategori');
             $product -> merk = $request->get('merk');
             $product -> stok = $request->get('stok');
             $product -> harga = $request->get('harga');
-            $product -> supplier_id = $request->get('supplier_id');
+            $product -> supplier_id = $request->get('supplier');
 
             $product->save();
-                return redirect()->route('/dataProduct')->with('success', 'Data Berhasil Diubah');
+                return redirect('/dataProduct')->with('success', 'Data Berhasil Diubah');
     }
 
-    function cetakDataProdut()
+    function cetakDataProduct()
     {
-        $dataProduct = Product::all();
+        $dataProduct = Product::with('suppliers')->get();
         $pdf = PDF::loadView('AdminView.cetakDataProduct',['dataProduct' => $dataProduct]);
         return $pdf->download('Data Product.pdf');
     }

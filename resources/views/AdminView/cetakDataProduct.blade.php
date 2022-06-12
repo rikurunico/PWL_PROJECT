@@ -13,7 +13,7 @@
 		}
 	</style>
 	<center>
-		<h2 class="text-center text-primary">Data User</h3>
+		<h2 class="text-center text-primary">Data Product</h3>
 	</center>
 
 	<table class="table table-bordered table-striped">
@@ -27,23 +27,21 @@
                 <th>Merk</th>
                 <th>Stok</th>
                 <th>Harga</th>
-                <th>Dibuat pada tanggal</th>
                 <th>Terakhir diubah tanggal</th>
              
             </tr>
 		</thead>
 		<tbody>
-            @foreach ($dataproduct as $dataproduct)
+            @foreach ($dataProduct as $dataProduct)
             <tr>
-                <td>{{ $dataproduct->id}}</td>
-                <td>{{ $dataproduct->supplier->nama}}</td>
-                <td>{{ $dataproduct->product}}</td>
-                <td>{{ $dataproduct->kategori}}</td>
-                <td>{{ $dataproduct->merk}}</td>
-                <td>{{ $dataproduct->stok}}</td>
-                <td>{{ $dataproduct->harga}}</td>
-                <td>{{ $dataproduct->created_at}}</td>
-                <td>{{ $dataproduct->updated_at}}</td>
+                <td>{{ $dataProduct->id}}</td>
+                <td>{{ $dataProduct->suppliers->nama}}</td>
+                <td>{{ $dataProduct->product}}</td>
+                <td>{{ $dataProduct->kategori}}</td>
+                <td>{{ $dataProduct->merk}}</td>
+                <td>{{ $dataProduct->stok}}</td>
+                <td>{{ $dataProduct->harga}}</td>
+                <td>{{ $dataProduct->updated_at}}</td>
                
             </tr>
             @endforeach

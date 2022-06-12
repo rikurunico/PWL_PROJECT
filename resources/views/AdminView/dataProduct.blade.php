@@ -186,7 +186,7 @@ $(document).ready(function(){
                     </div>
                     <div class="col-sm-7">
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                        <a href="{{ route('CetakDataProduct') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                        <a href="{{ route('CetakDataProduct') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>
             </div>
@@ -209,13 +209,13 @@ $(document).ready(function(){
                 <tbody>
                     <tr>
                         <td>{{ $dp->id}}</td>
-                        <td>{{ $dp->supplier_id}}</td>
+                        <td>{{ $dp->suppliers->nama}}</td>
                         <td>{{ $dp->product}}</td>
                         <td>{{ $dp->kategori}}</td>
                         <td>{{ $dp->merk}}</td>
                         <td>{{ $dp->stok}}</td>
                         <td>{{ $dp->harga}}</td>
-                        <td><img src="{{ asset($dp->gambar) }}" width="100px" height="100px"></td>
+                        <td><img src="{{ asset( 'storage/'.$dp->gambar) }}" width="100px" height="100px"></td>
                         <td><span class="status text-success">&bull;</span> Tersedia</td>
                         <td>
                            

@@ -23,12 +23,12 @@ class AdminController extends Controller
     }
     function profile()
     {
-        return view('AdminView.profile',[],['tittle' => 'Profile Page']);
+        return view('AdminView.profile',['tittle' => 'Profile Page']);
     }
 
     function dataproduct()
     {
-        $dataProduct = Product::orderBy('id', 'asc')->paginate(5);
+        $dataProduct = Product::with('suppliers')->orderBy('id', 'asc')->paginate(5);
         return view('AdminView.dataProduct',['tittle' => 'Data Product',
             'dataProduct' => $dataProduct,
         ]);

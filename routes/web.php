@@ -53,7 +53,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/createProduct', [ProductController::class, 'createProduct']) -> name('CreateProduct');
     Route::post('/postCreateProduct', [ProductController::class, 'storeProduct']) -> name('PostCreateProduct');
     Route::get('/editProduct/{id}', [ProductController::class, 'editproduct']) -> name('EditProduct');
-    Route::post('/updateProduct/{id}', [ProductController::class, 'updateProduct']) -> name('UpdateProduct');
+    Route::post('/updateProduct/{id}', [ProductController::class, 'updateDataProduct']) -> name('UpdateProduct');
     Route::get('/deleteProduct/{id}', [ProductController::class, 'destroyProduct']) -> name('DeleteProduct');
     Route::get('/printProduct', [ProductController::class, 'cetakDataProduct']) -> name('CetakDataProduct');
 

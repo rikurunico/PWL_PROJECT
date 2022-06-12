@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Supplier;
+
 
 class Product extends Model
 {
@@ -12,6 +14,6 @@ class Product extends Model
     protected $primarykey = 'id';
 
     public function suppliers(){
-    	return $this->belongsTo(Supplier::class);
+    	return $this->belongsTo('App\Models\Supplier' , 'supplier_id');
     }
 }
