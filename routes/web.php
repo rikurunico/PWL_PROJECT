@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SuplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,6 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
     Route::post('/changePassword', [AdminController::class, 'updateDataPassword']) -> name('ChangePasswordAdmin');
 
-   
     Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
     Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
     Route::get('/printdata', [AdminController::class, 'cetakDataUser']) -> name('CetakDataUser');
@@ -56,6 +56,13 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::post('/updateProduct/{id}', [ProductController::class, 'updateDataProduct']) -> name('UpdateProduct');
     Route::get('/deleteProduct/{id}', [ProductController::class, 'destroyProduct']) -> name('DeleteProduct');
     Route::get('/printProduct', [ProductController::class, 'cetakDataProduct']) -> name('CetakDataProduct');
+
+    Route::get('/createSupplier', [SuplierController::class, 'create']) -> name('CreateSupplier');
+    Route::post('/postCreateSupplier', [SuplierController::class, 'store']) -> name('PostCreateSupplier');
+    Route::post('/postUpdateSupplier/{id}', [SuplierController::class, 'postUpdateSuplier']) -> name('PostUpdateSupplier');
+    Route::get('/editSupplier/{id}', [SuplierController::class, 'edit']) -> name('EditSupplier');
+    Route::post('/updateSupplier/{id}', [SuplierController::class, 'updateDataSupplier']) -> name('UpdateSupplier');
+    Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
 
 });
 
