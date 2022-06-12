@@ -41,16 +41,15 @@
                     </div>
                 @enderror
                 </div>
-
                 <div class="form-group">
-                <label for="supplier">ID Supplier</label>
-                <input type="number" name="supplier" class="form-control @error('supplier') is-invalid @enderror" placeholder="ID Supplier" required autofocus>
-                @error('supplier')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                    <label for="supplier">Supplier</label>
+                    <select name="supplier" class="form-control">
+                        @foreach ($supplier as $supplier) 
+                            <option value="{{ $supplier ->id }}">{{ $supplier->nama }}</option>    
+                        @endforeach
+                    </select>
                 </div>
+
 
 
                 <div class="form-group">

@@ -16,31 +16,30 @@ class ProductController extends Controller
     // create data user
     public function createProduct()
     {
-        return view('AdminView.createDataProduct',['tittle' => 'Create Data Product']);
+        $supplier = Supplier::all();
+        $tittle = 'Create Product';
+        return view('AdminView.createDataProduct', compact('supplier', 'tittle'));
 
     }
     // fungsi store data user
     public function storeProduct(Request $request)
     {
-       
        //melakukan validasi data
-       $request->validate([
+        $request->validate([
         'product' => 'required',
-        'kategori' => ['required', 'email:dns', 'unique:users,email,'],
-        'merk' => ['required', 'numeric', 'unique:users,notelp,'],
+        'kategori' => ['required'],
+        'merk' => ['required'],
         'stok' => 'required',
         'harga' => 'required',
         'gambar'=>'required',
         'supplier'=>'required',
-
         ]);
 
         if($request->file('gambar')){
             $image_name = $request->file('gambar')->store('image', 'public');
         }
-
-        $product = Product::with('suppliers')->get();
-        // $product -> id = $request->get('id');
+        
+        $product = new Product;
         $product -> product = $request->get('product');
         $gambar = $request->file('gambar')->store('gambar', 'public');
         $product -> gambar = $gambar;
@@ -49,8 +48,7 @@ class ProductController extends Controller
         $product -> stok = $request->get('stok');
         $product -> harga = $request->get('harga');
         $product -> supplier_id = $request->get('supplier');
-
-        $product->save();
+        $product -> save();
 
         return redirect('/homeAdmin') -> with('success', 'Data Barang berhasil Ditambahkan');
     }
@@ -80,7 +78,6 @@ class ProductController extends Controller
             'harga' => 'required',
             'gambar' => 'required',
             'supplier' => 'required',
-            
             ]);
 
             $product = Product::with('suppliers')->where('id', $id)->first();
