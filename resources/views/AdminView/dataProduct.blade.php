@@ -185,7 +185,7 @@ $(document).ready(function(){
                         <h2>Product <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                        <a href="{{route('CreateProduct')}}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
                         <a href="{{ route('CetakDataProduct') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>

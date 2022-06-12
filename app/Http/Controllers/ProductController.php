@@ -12,6 +12,49 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+    // create data user
+    public function createProduct()
+    {
+        return view('AdminView.createDataProduct',['tittle' => 'Create Data Product']);
+
+    }
+    // fungsi store data user
+    public function storeProduct(Request $request)
+    {
+       
+       //melakukan validasi data
+       $request->validate([
+        'product' => 'required',
+        'kategori' => ['required', 'email:dns', 'unique:users,email,'],
+        'merk' => ['required', 'numeric', 'unique:users,notelp,'],
+        'stok' => 'required',
+        'harga' => 'required',
+        'gambar'=>'required',
+        'supplier'=>'required',
+
+        ]);
+
+        if($request->file('gambar')){
+            $image_name = $request->file('gambar')->store('image', 'public');
+        }
+
+        $product = Product::with('suppliers')->get();
+        // $product -> id = $request->get('id');
+        $product -> product = $request->get('product');
+        $gambar = $request->file('gambar')->store('gambar', 'public');
+        $product -> gambar = $gambar;
+        $product -> kategori = $request->get('kategori');
+        $product -> merk = $request->get('merk');
+        $product -> stok = $request->get('stok');
+        $product -> harga = $request->get('harga');
+        $product -> supplier_id = $request->get('supplier');
+
+        $product->save();
+
+        return redirect('/homeAdmin') -> with('success', 'Data Barang berhasil Ditambahkan');
+    }
+
     public function destroyproduct($id)
     {
         Product::where('id', $id)->delete();
