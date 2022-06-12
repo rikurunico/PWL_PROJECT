@@ -24,16 +24,7 @@ class UserSeeder extends Seeder
                 'notelp' => '081234567890',
                 'alamat' => 'Jl. Raya Sukabumi',
                 'created_at' => now(),
-            ],
-            [
-                'name' => 'User',
-                'email' => 'user@gmail.com',
-                'password' => bcrypt('user'),
-                'level' => 'user',
-                'notelp' => '081234567190',
-                'alamat' => 'Jl. Raya Sukabumi Asri',
-                'created_at' => now(),
-            ],
+            ]
         ]);
     }
 }

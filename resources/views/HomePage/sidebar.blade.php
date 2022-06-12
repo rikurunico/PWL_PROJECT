@@ -55,16 +55,16 @@
                   <p>Halaman Profile</p>
                 </a>
               </li>
+              <li class="nav-item">
+              <a href="{{ route('GalleryPage') }}" class="nav-link {{ ($tittle === "Gallery Page") ? 'active' : ''}}">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                  Gallery Product
+                  </p>
+                </a>
+              </li>
             </ul>
           </li>
-          </li>
-          <li class="nav-item">
-          <a href="{{ route('GalleryPage') }}" class="nav-link {{ ($tittle === "Gallery Page") ? 'active' : ''}}"">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-              Gallery Product
-              </p>
-            </a>
           </li>
           
           <li class="nav-item">
