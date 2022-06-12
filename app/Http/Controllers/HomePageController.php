@@ -61,6 +61,20 @@ class HomePageController extends Controller
         }
     }
 
+    function updateDataPassword(Request $request)
+    {
+        //validate laravel
+        $this->validate($request,[
+            'currentpassword'=> 'required|current_password|min:8|',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect('/profile') -> with('success', 'Password berhasil diubah');
+    }
+
     function checkout()
     {
         return view('HomePage.checkout', ['tittle' => 'Checkout Page']);

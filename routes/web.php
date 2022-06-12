@@ -65,4 +65,5 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::post('/postupdateDataUser', [HomePageController::class, 'updateDataUser']) -> name('updateDataUser');
     Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
     Route::get('/shopingcart', [HomePageController::class, 'shopingcart']) -> name('shopingCart');
+    Route::post('postupdateDataPassword', [HomePageController::class, 'updateDataPassword']) -> name('gantiPassword');
 });

@@ -66,7 +66,43 @@
                 
                 <!-- Large modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit Data</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-changepassword-modal-lg">Change Password</button>
 
+                {{-- Modal Change Password --}}
+                <div class="modal fade bd-changepassword-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="{{ route('gantiPassword') }}" method="POST">
+                          @csrf
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Current Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Saat Ini" placeholder="Enter current password" name="currentpassword">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">New Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Baru" placeholder="Enter new password" name="password">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="Password Konfirmasi" placeholder="Enter confirm password" name="password_confirmation">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                {{-- Modal Edit Data --}}
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content"> 
