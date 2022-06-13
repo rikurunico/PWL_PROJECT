@@ -79,6 +79,6 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/gallery', [HomePageController::class, 'gallery']) -> name('GalleryPage'); 
     Route::get('/cart', [HomePageController::class, 'cart'])->name('Cart');
     Route::get('/addcart/{id}', [HomePageController::class, 'addToCart'])->name('AddCart');
-    Route::get('/removecart', [HomePageController::class, 'remove'])->name('Removecart');
-    Route::get('/updatecart', [HomePageController::class, 'update'])->name('Updatecart');
+    Route::delete('/removecart', [HomePageController::class, 'remove'])->name('Removecart');
+    Route::patch('/updatecart', [HomePageController::class, 'update'])->name('Updatecart');
 });
