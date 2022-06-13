@@ -82,13 +82,13 @@ class HomePageController extends Controller
     
     function shopingcart()
     {
-        return view('HomePage.shopingcart', ['tittle' => 'Shoping Card | Shop']);
+        return view('HomePage.shoppingcart', ['tittle' => 'Shoping Card | Shop']);
     } 
 
     // function shopingcart()
     public function cart()
     {
-        return view('cart');
+        return view('HomePage.shoppingcart', ['tittle' => 'Shoping Card | Shop']);
     }
 
     public function addToCart($id)
