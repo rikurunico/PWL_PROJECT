@@ -50,7 +50,7 @@
                                 <tr>
                                     <td colspan="5" class="text-right">
                                         <a href="{{ url('/gallery') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                                        <button class="btn btn-success">Checkout</button>
+                                        <a href="{{ url('/checkout') }}" class="btn btn-success">Checkout <i class="fa fa-angle-right"></i></a>
                                     </td>
                                 </tr>
                             </tbody>

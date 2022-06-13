@@ -75,10 +75,6 @@ class HomePageController extends Controller
         return redirect('/profile') -> with('success', 'Password berhasil diubah');
     }
 
-    function checkout()
-    {
-        return view('HomePage.checkout', ['tittle' => 'Checkout Page']);
-    }
     
     function shopingcart()
     {
@@ -94,13 +90,14 @@ class HomePageController extends Controller
     public function addToCart($id)
     {
         $product = Product::findOrFail($id);
-          
+        
         $cart = session()->get('cart', []);
   
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
+                "id" => $id,
                 "product" => $product->product,
                 "quantity" => 1,
                 "kategori" => $product->kategori,
@@ -143,5 +140,19 @@ class HomePageController extends Controller
                 session()->flash('success', 'Product removed successfully');
             }
         }
+    }
+
+    public function checkout()
+    {
+        //get id from cart
+        $cart = session()->get('cart');
+        $id = array_keys($cart);
+        //get product from id
+        $products = Product::find($id);
+        $total = 0;
+        foreach($cart as $item){
+            $total += $item['harga'] * $item['quantity'];
+        }
+        return view('HomePage.checkout', ['tittle' => 'Checkout Page', 'produk' => $products, 'total' => $total]);
     }
 }
