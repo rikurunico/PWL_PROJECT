@@ -45,7 +45,7 @@
                             <br>   </br> 
                             <tbody>
                                 <tr>
-                                    <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+                                    <td colspan="5" class="text-right"><h3><strong>Total {{ $total }} Rupiah</strong></h3></td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-right">
@@ -55,7 +55,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button class="btn btn-success" onclick="testing">Checkout</button>
                     </div>
                 </div>
             </div>

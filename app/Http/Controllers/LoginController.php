@@ -8,7 +8,8 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        $remember_me = $request->remember ? true : false;
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {
             
             $user = Auth::user();
             if ($user->level == 'admin') {
