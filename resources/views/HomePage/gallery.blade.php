@@ -162,5 +162,7 @@
                 @endif
                 <!-- @yield('content') -->
             </div>
+        </div>
+    </section>
   @endsection
   

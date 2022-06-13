@@ -32,7 +32,7 @@
                                             </td>
                                             <td data-th="harga">${{ $details['harga'] }}</td>
                                             <td data-th="Quantity">
-                                                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                                                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" disabled/>
                                             </td>
                                             <td data-th="Subtotal" class="text-center">${{ $details['harga'] * $details['quantity'] }}</td>
                                             <td class="actions" data-th="">
@@ -55,9 +55,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                        @endsection
-  
-                        @section('scripts')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shoping Cart Section End -->
                         <script type="text/javascript">
                         
                             $(".update-cart").change(function (e) {
