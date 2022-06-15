@@ -22,95 +22,96 @@
                         <div class="section-title product__discount__title">
                             <h2>Sale Off</h2>
                         </div>
+                        
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="{{asset('img/categories/minyak.png')}}">
+                                        data-setbg="{{asset('img/categories/sania.png')}}">
                                             <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
+                                            <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="product__discount__item__text">
                                             <span>Bahan Dapur</span>
-                                            <h5><a href="#">Minyak Goreng Bimoli</a></h5>
-                                            <div class="product__item__price">Rp. 50.000<span>Rp. 40.000</span></div>
+                                            <h5><a href="#">Minyak Goreng Sania</a></h5>
+                                            <div class="product__item__price">Rp. 40.000 <span>Rp. 50.000</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="{{asset('img/categories/sabun.png')}}">
+                                            data-setbg="{{asset('img/categories/dettol.png')}}">
                                             <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
+                                            <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="product__discount__item__text">
                                             <span>Perlengkapan Mandi</span>
-                                            <h5><a href="#">Sabun Batang Lifebuoy</a></h5>
-                                            <div class="product__item__price">Rp. 18.0000 <span>Rp. 14.400</span></div>
+                                            <h5><a href="#">Sabun Cair Dettol</a></h5>
+                                            <div class="product__item__price">Rp. 14.400  <span>Rp. 18.0000</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="{{asset('img/categories/gula.png')}}">
+                                            data-setbg="{{asset('img/categories/dettol2.png')}}">
                                             <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
+                                            <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Bahan Dapur</span>
-                                            <h5><a href="#">Gulaku</a></h5>
-                                            <div class="product__item__price">Rp. 16.000 <span>Rp. 12.800</span></div>
+                                            <span>Perlengkapan Mandi</span>
+                                            <h5><a href="#">Sabun Batang Dettol</a></h5>
+                                            <div class="product__item__price">Rp. 7.000 <span>Rp. 10.000</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="{{asset('img/categories/tepung.png')}}">
+                                            data-setbg="{{asset('img/categories/kecap.png')}}">
                                             <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
+                                            <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="product__discount__item__text">
                                             <span>Bahan Dapur</span>
-                                            <h5><a href="#">Tepung Segitiga Biru</a></h5>
-                                            <div class="product__item__price">Rp. 15.000 <span>Rp. 12.000</span></div>
+                                            <h5><a href="#">Kecap ABC</a></h5>
+                                            <div class="product__item__price">Rp. 20.000 <span>Rp. 25.000</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="{{asset('img/categories/telur.png')}}">
+                                            data-setbg="{{asset('img/categories/miekuah.png')}}">
                                             <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
+                                            <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Bahan Dapur</span>
-                                            <h5><a href="#">Telur 1 Kg</a></h5>
-                                            <div class="product__item__price">Rp. 30.000 <span>Rp. 24.000</span></div>
+                                            <span>Makanan Instan</span>
+                                            <h5><a href="#">Mie Kuah</a></h5>
+                                            <div class="product__item__price">Rp. 3.000 <span>Rp. 5.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +132,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>16</span> Products found</h6>
-                                </div>
+                                    <h6><span>8</span> Products found</h6>
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -145,6 +146,7 @@
                               <div class="product__discount__item__text">
                                     <span>{{$g ->kategori}}</span>
                                     <h6><a href="#">{{$g ->product}}</a></h6>
+                                    <span>{{$g ->merk}}</span>
                                     <h5>{{$g ->harga}}</h5>
                               </div>
                               <p class="btn-holder"><a href=" {{ route('AddCart', $g->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
