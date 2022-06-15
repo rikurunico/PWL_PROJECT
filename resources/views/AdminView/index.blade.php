@@ -79,6 +79,8 @@
         
         <br>
         {{ $dataMember->links() }}
+        Jumlah data User : {{ $dataMember->total() }} <br>
+        Data per Halaman : {{ $dataMember->perPage() }} </br>
       </div>
       <!-- /.card-body -->
     </div>

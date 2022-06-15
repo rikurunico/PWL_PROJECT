@@ -219,6 +219,8 @@ $(document).ready(function(){
             </table>
             <br>
             {{ $dataSupplier->links() }}
+            Jumlah data Supplier : {{ $dataSupplier->total() }} <br>
+            Data per Halaman : {{ $dataSupplier->perPage() }} </br>
             </br>
         </div>
     </div>

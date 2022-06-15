@@ -228,6 +228,8 @@ $(document).ready(function(){
             </table>
             <br>
             {{ $dataProduct->links() }}
+            Jumlah data Product : {{ $dataProduct->total() }} <br>
+            Data per Halaman : {{ $dataProduct->perPage() }} </br>
             </br>
 
         </div>
