@@ -9,11 +9,12 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">Products</th>
+                                    <th>Gambar</th>
+                                    <th>Products</th>
                                     <th>Harga</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th></th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>

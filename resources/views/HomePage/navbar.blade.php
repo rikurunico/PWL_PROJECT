@@ -1,3 +1,5 @@
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -11,7 +13,7 @@
         <button class="btn b dropdown-toggle" type="" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
           Shop
         </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu">
             <a class="dropdown-item" href="{{ route('shopingCart') }} " class="nav-link {{ ($tittle === "Checkout Page ") ? 'active' : ''}}" class="nav-link">Shoping Cart</a>
             <a class="dropdown-item" href="{{ route('CheckoutPage') }} " class="nav-link {{ ($tittle === " Shoping Card | Shop ") ? 'active' : ''}}" class="nav-link">Check Out</a>
           </div>
@@ -63,7 +65,7 @@
                 <button type="button" class="btn btn-info" data-toggle="dropdown">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div class="row total-header-section">
                         <div class="col-lg-6 col-sm-6 col-6">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
@@ -90,7 +92,7 @@
                         @endforeach
                     @endif
                     <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                        <div class="col-lg-12 col-sm-12 col-10 text-center checkout">
                             <a href="{{ route('Cart') }}" class="btn btn-primary btn-block">View all</a>
                         </div>
                     </div>
