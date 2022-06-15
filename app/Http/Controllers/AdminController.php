@@ -16,7 +16,7 @@ class AdminController extends Controller
 {
     function index()
     {
-        $dataMember = User::orderBy('level', 'asc')->where('level', 'user')->paginate(5);
+        $dataMember = User::orderBy('level', 'asc')->where('level', 'user')->paginate(2);
         return view('AdminView.index',['tittle' => 'Home Page Admin',
             'dataMember' => $dataMember,
         ]);
@@ -36,7 +36,7 @@ class AdminController extends Controller
 
     function contact()
     {
-        return view('AdminView.contact',[], ['tittle' => 'Contact Admin']);
+        return view('AdminView.contact', ['tittle' => 'Contact Admin']);
     }
 
     function datasupplier()
@@ -195,5 +195,15 @@ class AdminController extends Controller
 
         return redirect('/homeAdmin') -> with('success', 'Data berhasil Ditambahkan');
     }
+
+    public function searching(Request $request)
+    {
+        //Menangkap data pencarian
+        $search = $request->search;
+        $user = User::where ('name','like',"%".$search."%");
+        return view ('HomePage.gallery',['users' => $user]);
+      
+    }
+
 
 }

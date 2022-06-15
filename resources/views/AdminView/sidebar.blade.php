@@ -36,7 +36,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ route('HomePageAdmin') }} " class="nav-link {{ ($tittle === "Home Page Admin") ? 'active' : ''}}">
-            <i class="bi bi-speedometer2"></i>
+            <i class="bi bi-people-fill"></i>
               <p>
                 Data Pengguna
               </p>

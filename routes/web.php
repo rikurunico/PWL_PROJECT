@@ -65,6 +65,8 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
     Route::get('/printSupplier', [SuplierController::class, 'cetakDataSupplier']) -> name('CetakDataSupplier');
 
+    Route::get('/searching', [HomePageController::class, 'searching'])->name('Searching');
+
 });
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
