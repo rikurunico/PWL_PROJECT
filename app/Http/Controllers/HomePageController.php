@@ -22,8 +22,11 @@ class HomePageController extends Controller
 
     function gallery()
     {
-        $data1 = Product::all();
-        return view('HomePage.gallery',['galeri' => $data1], ['tittle' => 'Gallery Page']);
+        //make sorting ascending;
+        $data1 = Product::orderBy('product','asc')->get();
+        $total = $data1->count();
+        return view ('HomePage.gallery',['galeri' => $data1],['tittle' => 'Gallery Page',
+        'total' => $total]);
     }
 
     function contact()

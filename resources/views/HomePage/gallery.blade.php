@@ -142,7 +142,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>8</span> Products found</h6>
+                                    <h6><span>{{$total}}</span> Products found</h6>
                                 </div> 
                             </div>
                         </div>
