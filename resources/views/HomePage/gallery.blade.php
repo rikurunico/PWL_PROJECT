@@ -17,12 +17,22 @@
       </div><!-- /.container-fluid -->
     </section>
 
+    <div class="col-md-4 mb-2">
+        <form action="{{ route('SearchProduct') }}"  method="GET">
+            <div class="input-group">
+                <input type="search" name="cari" class="form-control rounded" placeholder="Cari Barang Disini" aria-label="Search" aria-describedby="search-addon" value=" {{old('cari')}}"/>
+                <button type="submit" class="btn btn-outline-primary">search</button>
+            </div>
+        </form>
+    </div>
+
     <div class="col-lg-12 col-md-13">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
                             <h2>Sale Off</h2>
                         </div>
                         
+
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 <div class="col-lg-4">

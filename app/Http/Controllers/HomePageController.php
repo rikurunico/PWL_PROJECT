@@ -159,14 +159,9 @@ class HomePageController extends Controller
         return view('HomePage.checkout', ['tittle' => 'Checkout Page', 'produk' => $products, 'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas]);
     }
 
-    public function search(Request $request)
+    public function searchProduct(Request $request)
     {
-        //Menangkap data pencarian
-        $search = $request->search;
-        $product = Product::where ('merk','like',"%".$search."%");
-
-        return view ('HomePage.gallery',['product' => $product]);
-      
+        $data = Product::where('product', 'like', '%'.$request->cari.'%')->get();
+        return view('HomePage.search', ['tittle' => 'Search Page', 'barang' => $data]);
     }
-
 }
