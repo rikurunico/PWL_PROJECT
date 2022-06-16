@@ -85,4 +85,5 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::patch('/updatecart', [HomePageController::class, 'update'])->name('Updatecart');
     Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
     Route::get('/searchProduct', [HomePageController::class, 'searchProduct']) -> name('SearchProduct');
+    Route::get('/sorting', [HomePageController::class, 'gallerySort']) -> name('Sorting');
 });

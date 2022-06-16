@@ -22,12 +22,20 @@ class HomePageController extends Controller
 
     function gallery()
     {
-        //make sorting ascending;
-        $data1 = Product::orderBy('product','asc')->get();
-        $total = $data1->count();
+        $data1 = Product::all();
+        $total = Product::count();
         return view ('HomePage.gallery',['galeri' => $data1],['tittle' => 'Gallery Page',
         'total' => $total]);
     }
+
+    function gallerySort(Request $request)
+    {
+        $data1 = Product::orderBy($request->sorting, 'asc')->get();
+        $total = Product::count();
+        return view ('HomePage.gallery',['galeri' => $data1],['tittle' => 'Gallery Page',
+        'total' => $total]);
+    }
+
 
     function contact()
     {
@@ -167,4 +175,5 @@ class HomePageController extends Controller
         $data = Product::where('product', 'like', '%'.$request->cari.'%')->get();
         return view('HomePage.search', ['tittle' => 'Search Page', 'barang' => $data]);
     }
+
 }

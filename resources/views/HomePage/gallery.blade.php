@@ -133,11 +133,15 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
-                                    </select>
+                                    <form action="{{ route('Sorting') }}" method="get">
+                                        <span>Sort By</span>
+                                        <select name="sorting" class="form-control">
+                                            <option value="id">id</option>
+                                            <option value="product">product</option>
+                                            <option value="kategori">kategori</option>
+                                        </select>
+                                        <button type="submit" class="site-btn">Sort</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">

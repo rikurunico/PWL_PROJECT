@@ -61,41 +61,6 @@
                                     
                                 </div>
                                 <p>Setiap pemesanan barang yang dibeli hanya hanya melayani pembayaran non-tunai</p>
-                                <div class="checkout__input__checkbox">
-                                    <label for="payment">
-                                        Check Payment
-                                        <input type="checkbox" id="payment">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-
-                                <div class="card px-1 py-4">
-                                        <div class="card-body">
-                                            
-                                            <h6 class="information mt-1">Submit Payment</h6>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label for="name">Jenis Bank</label> <input class="form-control" type="text" placeholder=""> </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                             <input class="form-control" type="text" placeholder="No. REK"> </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> 
-                                                <small class="agree-text">Confirmasi pembayaran Anda untuk pembayara ini</small> 
-                                                <a href="#" class="terms">Terms & Conditions</a> </div> 
-                                                <button class="btn btn-primary btn-block confirm-button">Confirm</button>
-                                        </div>
-                                    </div>
-                                
-
-
                                 
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>
