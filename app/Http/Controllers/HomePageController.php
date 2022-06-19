@@ -161,12 +161,10 @@ class HomePageController extends Controller
         //get product from id
         $products = Product::find($id);
         $total = 0;
-        $kuantitas = 0;
         foreach($products as $product){
-            $kuantitas += $cart[$product->id]['quantity'];
             $total += $cart[$product->id]['quantity'] * $product->harga;
         }
-
+        $kuantitas = array_sum(array_column($cart, 'quantity'));
         return view('HomePage.checkout', ['tittle' => 'Checkout Page', 'produk' => $products, 'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas]);
     }
 
