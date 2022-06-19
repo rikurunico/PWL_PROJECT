@@ -16,7 +16,8 @@ class CreateTransaksiTable extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->integer('qty');
-            $table->date('Tangaal_beli');
+            $table->date('Tanggal_beli');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
