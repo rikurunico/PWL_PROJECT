@@ -176,4 +176,8 @@ class HomePageController extends Controller
         return view('HomePage.search', ['tittle' => 'Search Page', 'barang' => $data]);
     }
 
+    public function purchase(){
+        return view('HomePage.purchase', ['tittle' => 'Purchase Page']);
+    }
+
 }

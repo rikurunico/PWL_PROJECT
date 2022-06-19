@@ -57,7 +57,7 @@
                 </a>
               </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+          <a href="{{ route('PurchasePage') }}" class="nav-link {{ ($tittle === "Purchase Page") ? 'active' : ''}}">
             <i class="bi bi-receipt"></i>
               <p>
               Purchase

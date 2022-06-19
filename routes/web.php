@@ -86,4 +86,6 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/checkout', [HomePageController::class, 'checkout']) -> name('CheckoutPage');
     Route::get('/searchProduct', [HomePageController::class, 'searchProduct']) -> name('SearchProduct');
     Route::get('/sorting', [HomePageController::class, 'gallerySort']) -> name('Sorting');
+
+    Route::get('/purchase', [HomePageController::class, 'purchase']) -> name('PurchasePage');
 });
