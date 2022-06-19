@@ -199,16 +199,14 @@ class HomePageController extends Controller
             $transaksi->Tanggal_beli = now()->format('Y-m-d');
             $transaksi->created_at = now();
             $transaksi->save();
+
+            $payment = new Payment();
+            $payment->transaksi_id = $transaksi->id;
+            $payment->total_bayar = $total;
+            $payment->tanggal_bayar = now();
+            $payment->created_at = now();
+            $payment->save();
         }
-        
-
-        $payment = new Payment;
-        $payment->transaksi_id = $transaksi->id;
-        $payment->total_bayar = $total;
-        $payment->tanggal_bayar = now();
-        $payment->created_at = now();
-        $payment->save();
-
         //destroy session
         session()->forget('cart');
         return redirect('/purchase')->with('success', 'Pembayaran berhasil, silahkan cek email anda');
