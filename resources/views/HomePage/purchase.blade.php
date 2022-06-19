@@ -102,7 +102,7 @@
                     <br>
                     <form action="/print-laporan-transaksi" target="_blank" method="post">
                         <input type="hidden" name="_token" value="aEgUfofuap5XSC6Srsx5JUp3LmtVwJQNRKVqqgrT">
-                        <h4>Filter</h4>
+                        
                         <div class="row">
                             <div class="col-md-9 input-daterange">
                                 <div class="col">
@@ -138,16 +138,13 @@
                         <table id="datatable" class="table table-centered w-100 dt-responsive nowrap table-striped">
                             <thead class="table-light">
                                 <tr>
-                                    <th style="width: 50px;">No</th>
                                     <th>Kode Transaksi</th>
-                                    <th>Tanggal</th>
-                                    <th>Nama Pelanggan</th>
-                                    <th>Perusahaan</th>
+                                    <th>Quantity</th>
+                                    <th>Tanggal Beli</th>
                                     <th>Total</th>
                                     <th>Status</th>
-                                    <th>Deskripsi</th>
-                                    <th>Qr Invoice</th>
-                                    <th>Aksi</th>
+                                    <th>Note</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
