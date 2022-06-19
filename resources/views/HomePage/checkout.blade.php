@@ -9,7 +9,8 @@
             </div>
             <div class="checkout__form">
                 <h4>Detail Tagihan Pembayaran</h4>
-                <form action="#">
+                <form action="{{ route('PostCheckout') }}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -46,6 +47,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
+                                
                                 <h4>Pesanan Anda</h4>
                                 <div class="checkout__order__products">Barang x Qty<span>Harga Satuan</span></div>
                                 <ul>
@@ -53,7 +55,7 @@
                                         <li>{{$produk->product}} x  {{$cart[$produk->id]['quantity']}} <span>{{$produk->harga}}</span></li>
                                     @endforeach
                                 </ul>
-                                <div class="checkout__order__total">Total <span>{{$total}}</span></div>
+                                <div class="checkout__order__total">Total <span name="total">{{$total}}</span></div>
                                 <div class="checkout__input__checkbox">
                                     
                                 </div>

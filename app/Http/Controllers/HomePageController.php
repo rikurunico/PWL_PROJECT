@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Transaksi;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -178,4 +180,34 @@ class HomePageController extends Controller
         return view('HomePage.purchase', ['tittle' => 'Purchase Page']);
     }
 
+    public function postCheckOut(Request $request)
+    {
+        $cart = session()->get('cart');
+        $id = array_keys($cart);
+        //get product from id
+        $products = Product::find($id);
+        $total = 0;
+        foreach($products as $product){
+            $total += $cart[$product->id]['quantity'] * $product->harga;
+        }
+        
+        foreach($cart as $item){
+            $transaksi = new Transaksi();
+            $transaksi->user_id = Auth::user()->id;
+            $transaksi->product_id = $item['id'];
+            $transaksi->qty = $item['quantity'];
+            $transaksi->Tanggal_beli = now()->format('Y-m-d');
+            $transaksi->created_at = now();
+            $transaksi->save();
+        }
+
+        $payment = new Payment;
+        $payment->transaksi_id = $transaksi->id;
+        $payment->total_bayar = $total;
+        $payment->tanggal_bayar = now();
+        $payment->created_at = now();
+        $payment->save();
+
+        return redirect('/purchase');
+    }
 }
