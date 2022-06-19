@@ -126,10 +126,6 @@
                                 </div>
                             </div>
                             <br>
-                            <button type="button" id="createNewTrans" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                                data-bs-target="#success-header-modal"><i class="bi bi-plus"></i>
-                                Transaksi Baru
-                                </button>
                         </div>
                     </form>
                     <br/>
