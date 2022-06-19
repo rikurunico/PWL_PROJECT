@@ -200,6 +200,7 @@ class HomePageController extends Controller
             $transaksi->created_at = now();
             $transaksi->save();
         }
+        
 
         $payment = new Payment;
         $payment->transaksi_id = $transaksi->id;
@@ -208,6 +209,8 @@ class HomePageController extends Controller
         $payment->created_at = now();
         $payment->save();
 
-        return redirect('/purchase');
+        //destroy session
+        session()->forget('cart');
+        return redirect('/purchase')->with('success', 'Pembayaran berhasil, silahkan cek email anda');
     }
 }
