@@ -186,10 +186,7 @@ class HomePageController extends Controller
         $id = array_keys($cart);
         //get product from id
         $products = Product::find($id);
-        $total = 0;
-        foreach($products as $product){
-            $total += $cart[$product->id]['quantity'] * $product->harga;
-        }
+        
         
         foreach($cart as $item){
             $transaksi = new Transaksi();
@@ -200,9 +197,11 @@ class HomePageController extends Controller
             $transaksi->created_at = now();
             $transaksi->save();
 
+            $product = Product::find($item['id']);
             $payment = new Payment();
-            $payment->transaksi_id = $transaksi->id;
+            $total = $cart[$product->id]['quantity'] * $product->harga;
             $payment->total_bayar = $total;
+            $payment->transaksi_id = $transaksi->id;
             $payment->tanggal_bayar = now();
             $payment->created_at = now();
             $payment->save();
