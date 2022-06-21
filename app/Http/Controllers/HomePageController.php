@@ -183,10 +183,6 @@ class HomePageController extends Controller
     public function postCheckOut(Request $request)
     {
         $cart = session()->get('cart');
-        $id = array_keys($cart);
-        //get product from id
-        $products = Product::find($id);
-        
         
         foreach($cart as $item){
             $transaksi = new Transaksi();
@@ -205,6 +201,8 @@ class HomePageController extends Controller
             $payment->tanggal_bayar = now();
             $payment->created_at = now();
             $payment->save();
+            $product->stok = $product->stok - $cart[$product->id]['quantity'];
+            $product->save();
         }
         //destroy session
         session()->forget('cart');
