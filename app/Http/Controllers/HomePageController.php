@@ -208,4 +208,12 @@ class HomePageController extends Controller
         session()->forget('cart');
         return redirect('/purchase')->with('success', 'Pembayaran berhasil, silahkan cek email anda');
     }
+
+    public function purchaseHistory()
+    {
+        $transaksi = Transaksi::all()->where('user_id', Auth::user()->id);
+        $transaksiid = array_column($transaksi->toArray(), 'id');
+        $payment = Payment::with('transaksi')->whereIn('transaksi_id', $transaksiid)->get();
+        return view('HomePage.purchaseHistory', ['tittle' => 'Purchase History Page', 'transaksi' => $transaksi, 'payment' => $payment]);
+    }
 }
