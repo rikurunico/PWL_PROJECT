@@ -29,7 +29,7 @@
     <div class="col-lg-12 col-md-13">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
-                            <h2>Sale Off</h2>
+                            <h2>Sale Off 20%</h2>
                         </div>
                         
 
@@ -39,7 +39,7 @@
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                         data-setbg="{{asset('img/categories/sania.png')}}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">Habis</div>
                                             <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -57,7 +57,7 @@
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                             data-setbg="{{asset('img/categories/dettol.png')}}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">Habis</div>
                                             <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -75,7 +75,7 @@
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                             data-setbg="{{asset('img/categories/dettol2.png')}}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">Habis</div>
                                             <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -93,7 +93,7 @@
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                             data-setbg="{{asset('img/categories/kecap.png')}}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">Habis</div>
                                             <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -111,7 +111,7 @@
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                             data-setbg="{{asset('img/categories/miekuah.png')}}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">Habis</div>
                                             <!-- <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -136,9 +136,9 @@
                                     <form action="{{ route('Sorting') }}" method="get">
                                         <span>Sort By</span>
                                         <select name="sorting" class="form-control">
-                                            <option value="id">id</option>
-                                            <option value="product">product</option>
-                                            <option value="kategori">kategori</option>
+                                            <option value="id">Id</option>
+                                            <option value="product">Product</option>
+                                            <option value="kategori">Kategori</option>
                                         </select>
                                         <button type="submit" class="site-btn">Sort</button>
                                     </form>
