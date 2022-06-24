@@ -30,7 +30,7 @@
                     <div class="hero__text">
                       <span>TOKO SEMBAKO FAST</span>
                       <h2> Segala Macam Sembako <br />100% Halal</h2>
-                      <p>Free Pickup and Delivery Available</p>
+                      <h6>Free Pickup and Delivery Available</h6> <br>
                       <a href="#" class="primary-btn">SHOP NOW</a>
                     </div>
                   </div>
@@ -77,45 +77,115 @@
     </section>
     <!-- Categories Section End -->
 
-     <!-- Featured Section Begin -->
-     <section class="featured spad">
+      <!-- Featured Section Begin -->
+    <section class="featured spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Produk Unggulan</h2>
+                        <h2>Product Unggulan</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             <li data-filter=".dapur">Bahan Dapur</li>
                             <li data-filter=".mandi">Perlengkapan Mandi</li>
-                            <li data-filter=".instan">Makanan Instan</li>
+                            <li data-filter=".instan">Makanan instan</li>
+                           
                         </ul>
                     </div>
                 </div>
             </div>
-
-            
             <div class="row featured__filter">
-                @foreach ($barang as $b)
-                <div class="col-lg-3 col-md-4 col-sm-6 mix dapur mandi instan">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix dapur">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{'storage/'.$b->gambar}}">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/minyak.png">
                             
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{$b ->product}}</a></h6>
-                            <h5>{{$b ->harga}}</h5>
+                            <h6><a href="#">Minyak Goreng 2L</a></h6>
+                            <h5>Rp. 28.000</h5>
                         </div>
-                    </div> 
-                </div>   
-                @endforeach 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix instan ">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/mie.png">
+                            
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Mie Goreng</a></h6>
+                            <h5>Rp. 2500</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix mandi">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/clear.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Shampoo</a></h6>
+                            <h5>Rp. 25.000 </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix dapur">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/tepung.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tempung Terigu</a></h6>
+                            <h5>Rp. 10.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix instan">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/miekuah.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Mie Kuah</a></h6>
+                            <h5>Rp. 3000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix dapur ">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/telur.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Telur 1 Kg</a></h6>
+                            <h5>Rp. 24.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix mandi ">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/peps.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Pasta Gigi</a></h6>
+                            <h5>Rp. 13.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix mandi ">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sabun.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Sabun Batang</a></h6>
+                            <h5>Rp. 3000</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-  </section>
-  <!-- Featured Section End -->
-  <div class="card card-primary card-outline">
+    </section>
+    <!-- Featured Section End -->
+
+    <section>
+    <div class="card card-primary card-outline">
     <div class="card-body text-white bg-info">
     <h3 class="section-title-2 text-uppercase font-weight-300 text-center" ><b>Our</b> <span class="blue-text">Information</span></h3>
     <br></br>
@@ -126,6 +196,6 @@
                 </div>
             </div>
         </div>
-
+    </section>
 
 @endsection
