@@ -19,7 +19,7 @@ class Transaksi extends Model
     //one to one from transaksi to payments
     public function payments()
     {
-    	return $this->hasOne('App\Models\Payment', 'transaksi_id');
+        return $this->hasOne('App\Models\Payment', 'transaksi_id');
     }
 
     //one to many from transaksi to product

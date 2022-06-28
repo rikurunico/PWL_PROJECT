@@ -98,6 +98,6 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::post('/postCheckout', [HomePageController::class, 'postCheckOut']) -> name('PostCheckout');
 
     Route::get('/purchase', [HomePageController::class, 'purchaseHistory']) -> name('PurchasePage');
-    Route::get('/editDataPurchase/{id}', [PurchaseController::class, 'editDataPurchase']) -> name('EditDataPurchase');
+    Route::get('/editDataPurchase/{id}', [PurchaseController::class, 'editDataPurchase']) -> name('EditPurchase');
     Route::get('/deletePurchase/{id}', [PurchaseController::class, 'destroy']) -> name('DeletePurchase');
 });

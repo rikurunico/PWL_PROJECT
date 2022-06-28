@@ -207,16 +207,14 @@ $(document).ready(function(){
                         @foreach($payment as $payment)
                         <tr>
                             <td> {{$payment->transaksi->id}}</td>
-                            <td> {{$payment->transaksi->product_id}}
-                            <td> {{$payment->product_id}}
+                            <td> {{$payment->transaksi->products->product}}
+                            <td> {{$payment->Transaksi->products->harga}}</td>
                             <td> {{$payment->transaksi->qty}}</td>                                   
                             <td> {{$payment->transaksi->Tanggal_beli}}</td>
                             <td> {{$payment->total_bayar}}</td>
                             <td> {{$payment->transaksi->note}}</td>
-                        
-                       
                             <td>
-                                <a href="{{ route('EditDataPurchase', $payment->id) }}" class="btn btn-md btn-warning">Edit</a>
+                                <a href="{{ route('EditPurchase', $payment->id) }}" class="btn btn-md btn-warning">Edit</a>
                                 <a href="{{ route('DeletePurchase', $payment->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                             </td>
                         </tr> 

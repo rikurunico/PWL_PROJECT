@@ -31,20 +31,12 @@
 		<tbody>
             @foreach ($dataPenjualan as $dp)
             <tr>
-<<<<<<< HEAD
             <td>{{ $dp->id}}</td>
             <td>{{ $dp->users->name}}</td>
             <td>{{ $dp->products->product}}</td>
             <td>{{ $dp->products->harga}}</td>
             <td>{{ $dp->qty}}</td>
             <td>{{ $dp->created_at}}</td>
-=======
-                <td>{{ $dp->id}}</td>
-                <td>{{ $dp->users->name}}</td>
-                <td>{{ $dp->products->product}}</td>
-                <td>{{ $dp->qty}}</td>
-                <td>{{ $dp->created_at}}</td>
->>>>>>> ec6843672a6b3e1dbef3b756f5554ccf0bc789e0
             </tr>
             @endforeach
 		</tbody>
