@@ -59,7 +59,7 @@
                                 <div class="checkout__input__checkbox">
                                     
                                 </div>
-                                <p>Setiap pemesanan barang yang dibeli hanya hanya melayani pembayaran non-tunai</p>
+                                <p style="color: black;">Setiap pemesanan barang yang dibeli hanya hanya melayani pembayaran non-tunai</p>
                                 
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>
