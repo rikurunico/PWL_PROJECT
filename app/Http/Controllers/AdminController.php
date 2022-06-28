@@ -57,6 +57,36 @@ class AdminController extends Controller
         ]);
     }
 
+    function editDataPenjualan($id)
+    {
+        $dataPenjualan = Transaksi::find($id);
+        return view('AdminView.editDataPenjualan',['tittle' => 'Edit Data Penjualan',
+            'dataPenjualan' => $dataPenjualan,
+        ]);
+    }
+
+    function updateDataPenjualan(Request $request, $id)
+    {
+        $dataPenjualan = Transaksi::find($id);
+        $dataPenjualan->update($request->all());
+        return redirect('/dataPenjualan');
+    }
+
+    function deleteDataPenjualan($id)
+    {
+        $dataPenjualan = Transaksi::find($id);
+        $dataPenjualan->delete();
+        return redirect('/dataPenjualan');
+    }
+
+    function cetakDataPenjualan(){
+        $dataPenjualan = Transaksi::all();
+        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->paginate(3);
+        $pdf = PDF::loadView('AdminView.cetakDataPenjualan',['tittle' => 'Data Penjualan',
+            'dataPenjualan' => $dataPenjualan,
+        ]);
+        return $pdf->download('Data Penjualan.pdf');
+    }
     
     function updateDataAdmin(Request $request)
     {
