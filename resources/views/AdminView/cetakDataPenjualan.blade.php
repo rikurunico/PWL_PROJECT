@@ -22,7 +22,8 @@
             <tr>
             <th>ID</th>
             <th>User</th>
-            <th>Nama Barang</th>            
+            <th>Nama Barang</th>    
+            <th>Harga Satuan</th>         
             <th>Jumlah Item</th>						
             <th>Tanggal Transaksi</th>            
             </tr>
@@ -32,7 +33,8 @@
             <tr>
             <td>{{ $dp->id}}</td>
             <td>{{ $dp->users->name}}</td>
-            <td>{{ $dp->product_id}}</td>
+            <td>{{ $dp->products->product}}</td>
+            <td>{{ $dp->products->harga}}</td>
             <td>{{ $dp->qty}}</td>
             <td>{{ $dp->created_at}}</td>
             </tr>
