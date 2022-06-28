@@ -62,8 +62,10 @@ class ProductController extends Controller
     function editproduct($id)
     {
         $product = Product::find($id);
+        $supplier = Supplier::all();
         return view('AdminView.editDataProduct',['tittle' => 'Edit Data Product',
             'product' => $product,
+            'supplier' => $supplier
         ]);
     }
 
@@ -76,23 +78,34 @@ class ProductController extends Controller
             'merk' => 'required',
             'stok' => 'required',
             'harga' => 'required',
-            'gambar' => 'required',
             'supplier' => 'required',
             ]);
 
-            $product = Product::with('suppliers')->where('id', $id)->first();
-            // $product -> id = $request->get('id');
-            $product -> product = $request->get('product');
-            $gambar = $request->file('gambar')->store('gambar', 'public');
-            $product -> gambar = $gambar;
-            $product -> kategori = $request->get('kategori');
-            $product -> merk = $request->get('merk');
-            $product -> stok = $request->get('stok');
-            $product -> harga = $request->get('harga');
-            $product -> supplier_id = $request->get('supplier');
-
-            $product->save();
+            if($request -> hasFile('gambar')){
+                $product = Product::with('suppliers')->where('id', $id)->first();
+                // $product -> id = $request->get('id');
+                $product -> product = $request->get('product');
+                $gambar = $request->file('gambar')->store('gambar', 'public');
+                $product -> gambar = $gambar;
+                $product -> kategori = $request->get('kategori');
+                $product -> merk = $request->get('merk');
+                $product -> stok = $request->get('stok');
+                $product -> harga = $request->get('harga');
+                $product -> supplier_id = $request->get('supplier');
+                $product->save();
                 return redirect('/dataProduct')->with('success', 'Data Berhasil Diubah');
+            } else {
+               $product = Product::with('suppliers')->where('id', $id)->first();
+                // $product -> id = $request->get('id');
+                $product -> product = $request->get('product');
+                $product -> kategori = $request->get('kategori');
+                $product -> merk = $request->get('merk');
+                $product -> stok = $request->get('stok');
+                $product -> harga = $request->get('harga');
+                $product -> supplier_id = $request->get('supplier');
+                $product->save();
+                return redirect('/dataProduct')->with('success', 'Data Berhasil Diubah');
+            }
     }
 
     function cetakDataProduct()

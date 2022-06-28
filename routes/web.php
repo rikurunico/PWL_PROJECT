@@ -71,7 +71,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
     Route::get('/printSupplier', [SuplierController::class, 'cetakDataSupplier']) -> name('CetakDataSupplier');
 
-    Route::get('/editPenjualan/{id}', [SuplierController::class, 'edit']) -> name('EditPenjualan');
+   
 
     Route::get('/searching', [HomePageController::class, 'searching'])->name('Searching');
 
@@ -99,5 +99,8 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
 
     Route::get('/purchase', [HomePageController::class, 'purchaseHistory']) -> name('PurchasePage');
     Route::get('/editDataPurchase/{id}', [PurchaseController::class, 'editDataPurchase']) -> name('EditPurchase');
+    Route::post('/postUpdatePurchase/{id}', [PurchaseController::class, 'store']) -> name('PostUpdatePurchase');
+    Route::post('/updatePurchas/{id}', [PurchaseController::class, 'updateDataPurchase']) -> name('UpdatePurchase');
     Route::get('/deletePurchase/{id}', [PurchaseController::class, 'destroy']) -> name('DeletePurchase');
+    Route::get('/cetakPurchase', [PurchaseController::class, 'cetakPurchase']) -> name('CetakPurchaseHistory');
 });
