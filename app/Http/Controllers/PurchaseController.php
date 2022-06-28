@@ -39,27 +39,32 @@ class PurchaseController extends Controller
         return redirect('/purchase');
     }
 
-    function edit ($id) {
+    function editDataPurchase($id){
         $transaksi = Transaksi::find($id);
-        return view('AdminView.DataSuplier.updatesuplier')->with('tittle', 'Edit Supplier')->with('suppliers', $transaksi);
+        return view('HomePage.editPurchase', ['tittle' => 'Edit Purchase',
+            'transaksi' => $transaksi,
+        ]);
     }
 
-    function updateDataSupplier (Request $request, $id) {
+    function updateDataPurchase (Request $request, $id) {
         $this->validate($request, [
-            'nama' => 'required',
-            'alamat' => 'required',
-            'telp' => 'required|unique:suppliers,telp,'.$id,
+            'qty' => 'required',
+            'tanggal_beli' => 'required',
+            'note' => 'required',
+            'product' => 'required',
+            'user'=>'required',
         ]);
 
-        $suppliers = Supplier::find($id);
-        $suppliers->nama = $request->nama;
-        $suppliers->alamat = $request->alamat;
-        $suppliers->telp = $request->telp;
-        $suppliers->save();
+        $transaksi = Transaksi::find($id);
+        $transaksi->qty = $request->qty;
+        $transaksi->tanggal_beli = $request->tanggal_beli;
+        $transaksi->note = $request->note;
+        $transaksi->user_id = $request->user;
+        $transaksi->product_id = $request->product;
+        $transaksi->save();
 
-        return redirect('/dataSupplier');
+        return redirect('/purchase');
     }
-
    
      // fungsi delete
      function destroy ($id) {

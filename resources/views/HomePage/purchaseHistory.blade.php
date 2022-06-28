@@ -216,7 +216,7 @@ $(document).ready(function(){
                         
                        
                             <td>
-                                <a href="{{ route('EditPurchase', $payment->id) }}" class="btn btn-md btn-warning">Edit</a>
+                                <a href="{{ route('EditDataPurchase', $payment->id) }}" class="btn btn-md btn-warning">Edit</a>
                                 <a href="{{ route('DeletePurchase', $payment->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                             </td>
                         </tr> 
