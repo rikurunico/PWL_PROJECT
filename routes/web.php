@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SuplierController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,8 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/deleteSupplier/{id}', [SuplierController::class, 'destroy']) -> name('DeleteSupplier');
     Route::get('/printSupplier', [SuplierController::class, 'cetakDataSupplier']) -> name('CetakDataSupplier');
 
+    Route::get('/editPenjualan/{id}', [SuplierController::class, 'edit']) -> name('EditPenjualan');
+
     Route::get('/searching', [HomePageController::class, 'searching'])->name('Searching');
 
 });
@@ -90,4 +93,6 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::post('/postCheckout', [HomePageController::class, 'postCheckOut']) -> name('PostCheckout');
 
     Route::get('/purchase', [HomePageController::class, 'purchaseHistory']) -> name('PurchasePage');
+    Route::get('/editPurchase/{id}', [PurchaseController::class, 'edit']) -> name('EditPurcahse');
+    Route::get('/deletePurchase/{id}', [PurchaseController::class, 'destroy']) -> name('DeletePurchase');
 });

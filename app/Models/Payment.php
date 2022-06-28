@@ -13,6 +13,6 @@ class Payment extends Model
     //one to one from payments to transaksi
     public function transaksi()
     {
-        return $this->belongsTo(Transaksi::class);
+        return $this->belongsTo('App\Models\Transaksi', 'transaksi_id');
     }
 }

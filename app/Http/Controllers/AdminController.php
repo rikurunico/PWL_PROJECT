@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
@@ -203,6 +204,11 @@ class AdminController extends Controller
         $user = User::where ('name','like',"%".$search."%");
         return view ('HomePage.gallery',['users' => $user]);
       
+    }
+
+    public function getpaymenthistory(){
+        $payment=Payment::all();
+
     }
 
 

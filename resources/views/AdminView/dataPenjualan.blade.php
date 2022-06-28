@@ -182,7 +182,7 @@ $(document).ready(function(){
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Data <b>Transaksi</b></h2>
+                        <h2>Laporan Data Penjualan</h2>
                     </div>
                     <div class="col-sm-7">
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
@@ -205,13 +205,13 @@ $(document).ready(function(){
                 <tbody>
                     <tr>
                         <td>{{ $dp->id}}</td>
-                        <td>{{ $dp->user_id}}</td>
-                        <td>{{ $dp->user_id}}</td>
+                        <td>{{ $dp->users->name}}</td>
+                        <td>{{ $dp->products->merk}}</td>
                         <td>{{ $dp->qty}}</td>
-                        <td>{{ $dp->Tangaal_beli}}</td>
+                        <td>{{ $dp->created_at}}</td>
                         <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        <a href="{{ route('EditPenjualan', $dp->id) }}" class="btn btn-md btn-warning">Edit</a>
+                        <a href="#" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
                 </tbody>
