@@ -28,13 +28,13 @@
             </tr>
 		</thead>
 		<tbody>
-            @foreach ($dataUser as $dataUser)
+            @foreach ($dataPenjualan as $dp)
             <tr>
-            <td>{{ $dp->id}}</td>
-            <td>{{ $dp->users->name}}</td>
-            <td>{{ $dp->product_id}}</td>
-            <td>{{ $dp->qty}}</td>
-            <td>{{ $dp->created_at}}</td>
+                <td>{{ $dp->id}}</td>
+                <td>{{ $dp->users->name}}</td>
+                <td>{{ $dp->products->product}}</td>
+                <td>{{ $dp->qty}}</td>
+                <td>{{ $dp->created_at}}</td>
             </tr>
             @endforeach
 		</tbody>

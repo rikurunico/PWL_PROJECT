@@ -186,7 +186,7 @@ $(document).ready(function(){
                     </div>
                     <div class="col-sm-7">
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                        <a href="cetakDataPenjualan" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@ $(document).ready(function(){
                         <td>{{ $dp->created_at}}</td>
                         <td>
                         <a href="{{ route('EditPenjualan', $dp->id) }}" class="btn btn-md btn-warning">Edit</a>
-                        <a href="#" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
+                        <a href="{{ route('deleteDataPenjualan', $dp->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
                 </tbody>

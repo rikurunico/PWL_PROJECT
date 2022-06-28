@@ -40,10 +40,15 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::post('/postProfileAdmin', [AdminController::class, 'updateDataAdmin']) -> name('PostProfileAdmin');
     Route::get('/dataProduct', [AdminController::class, 'dataproduct']) -> name('DataProductPage');
     Route::get('/dataSupplier', [AdminController::class, 'datasupplier']) -> name('DataSupplierPage');
-    Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
     Route::get('/contactAdmin', [AdminController::class, 'contact']) -> name('ContactAdminPage');
     Route::post('/changePassword', [AdminController::class, 'updateDataPassword']) -> name('ChangePasswordAdmin');
 
+    Route::get('/dataPenjualan', [AdminController::class, 'datapenjualan']) -> name('DataPenjualanPage');
+    Route::get('/editDataPenjualan/{id}', [AdminController::class, 'editDataPenjualan']) -> name('editDataPenjualan');
+    Route::post('/updateDataPenjualan/{id}', [AdminController::class, 'updateDataPenjualan']) -> name('updateDataPenjualan');
+    Route::get('/deleteDataPenjualan/{id}', [AdminController::class, 'deleteDataPenjualan']) -> name('deleteDataPenjualan');
+    Route::get('/cetakDataPenjualan', [AdminController::class, 'cetakDataPenjualan']) -> name('cetakDataPenjualan');
+    
     Route::get('/edit/{id}', [AdminController::class, 'edit']) -> name('EditUser');
     Route::post('/update/{id}', [AdminController::class, 'updateDataUser']) -> name('UpdateUser');
     Route::get('/printdata', [AdminController::class, 'cetakDataUser']) -> name('CetakDataUser');
