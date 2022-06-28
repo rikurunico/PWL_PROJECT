@@ -206,7 +206,7 @@ $(document).ready(function(){
                     <tr>
                         <td>{{ $dp->id}}</td>
                         <td>{{ $dp->users->name}}</td>
-                        <td>{{ $dp->products->merk}}</td>
+                        <td>{{ $dp->products->product}}</td>
                         <td>{{ $dp->qty}}</td>
                         <td>{{ $dp->created_at}}</td>
                         <td>

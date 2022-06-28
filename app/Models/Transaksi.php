@@ -23,8 +23,8 @@ class Transaksi extends Model
     }
 
     //one to many from transaksi to product
-    public function product(){
-    	return $this->hasMany('App\Models\Product', 'product_id');
+    public function products(){
+        return $this->belongsTo('App\Models\Product', 'product_id');
     }
 }
 

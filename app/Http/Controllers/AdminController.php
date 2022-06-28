@@ -51,7 +51,7 @@ class AdminController extends Controller
     function datapenjualan()
     {
         $dataPenjualan = Transaksi::all();
-        $dataPenjualan = Transaksi::orderBy('id', 'asc')->paginate(3);
+        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->paginate(3);
         return view('AdminView.dataPenjualan',['tittle' => 'Data Penjualan',
             'dataPenjualan' => $dataPenjualan,
         ]);
