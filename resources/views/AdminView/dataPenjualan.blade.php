@@ -196,6 +196,7 @@ $(document).ready(function(){
                         <th>ID</th>
                         <th>User</th>
                         <th>Nama Barang</th>
+                        <th>Harga Satuan<th>
                         <th>Jumlah Item</th>						
                         <th>Tanggal Transaksi</th>
                         <th>Action</th>
@@ -207,6 +208,7 @@ $(document).ready(function(){
                         <td>{{ $dp->id}}</td>
                         <td>{{ $dp->users->name}}</td>
                         <td>{{ $dp->products->product}}</td>
+                        <td>{{ $dp->products->harga}}</td>
                         <td>{{ $dp->qty}}</td>
                         <td>{{ $dp->created_at}}</td>
                         <td>
