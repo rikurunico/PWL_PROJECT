@@ -185,25 +185,24 @@ $(document).ready(function(){
                         <h2>Laporan Data Penjualan</h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
                         <a href="cetakDataPenjualan" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
-                <thead>
+            <thead>
                     <tr>
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Nama Barang</th>
-                        <th>Harga Satuan<th>
-                        <th>Jumlah Item</th>						
+                        <th>Nama User</th>
+                        <th>Nama Barang</th>						
+                        <th>Harga Satuan</th>
+                        <th>Quantity</th>
                         <th>Tanggal Transaksi</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                @foreach ($dataPenjualan as $dp)
                 <tbody>
+                    @foreach ($dataPenjualan as $dp)
                     <tr>
                         <td>{{ $dp->id}}</td>
                         <td>{{ $dp->users->name}}</td>
@@ -212,12 +211,11 @@ $(document).ready(function(){
                         <td>{{ $dp->qty}}</td>
                         <td>{{ $dp->created_at}}</td>
                         <td>
-                        <a href="{{ route('EditPenjualan', $dp->id) }}" class="btn btn-md btn-warning">Edit</a>
-                        <a href="{{ route('deleteDataPenjualan', $dp->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
+                         <a href="{{ route('deleteDataPenjualan', $dp->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
-                @endforeach
             </table>
             <br>
             {{ $dataPenjualan->links() }}
