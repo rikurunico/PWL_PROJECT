@@ -213,7 +213,7 @@ class HomePageController extends Controller
     {
         $transaksi = Transaksi::with('products')->orderBy('created_at', 'desc')->where('user_id', Auth::user()->id)->get();
         $transaksiid = array_column($transaksi->toArray(), 'id');
-        $payment = Payment::with('transaksi')->whereIn('transaksi_id', $transaksiid)->get();
+        $payment = Payment::with('transaksi')->whereIn('transaksi_id', $transaksiid)->paginate(5);
         return view('HomePage.purchaseHistory', ['tittle' => 'Purchase History Page', 'transaksi' => $transaksi, 'payment' => $payment]);
     }
 }

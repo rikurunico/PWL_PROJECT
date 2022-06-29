@@ -7,7 +7,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="#"><b>Register</b>Akun</a>
   </div>
 
   <div class="card">

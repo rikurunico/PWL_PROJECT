@@ -6,15 +6,15 @@
                 <div class="col-md-12 mt-3">
                     <h3>Form Edit Data Product</h3>
                     @if ($errors->any())
-      <div class="alert alert-danger">
-        <strong>Whoops!</strong> Inputan Kamu Ada Yang Salah<br><br>
-          <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-    </div>
-@endif
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> Inputan Kamu Ada Yang Salah<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 <form method="post" enctype="multipart/form-data" action="{{ route('UpdateProduct', [$product->id]) }}" id="myForm" >
                 @csrf
                 
@@ -29,15 +29,21 @@
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                    <label for="Supplier">ID Supplier</label>
+                    <label for="Supplier">Supplier Name</label>
+                    <select name="supplier" class="form-control">
+                        @foreach ($supplier as $spy)
+                        <option value="{{ $spy ->id }}">{{$spy->nama}}</option>
+                        @endforeach
+                    </select>
+                    {{-- <label for="Supplier">ID Supplier</label>
                     <input type="text" name="supplier" class="form-control @error('supplier') is-invalid @enderror" value="{{ old( 'supplier', $product->supplier_id) }}" required autofocus>
                         @error('product')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
-                        @enderror
+                        @enderror --}}
                     </div>
-                </div>
+                    </div>
             
                 <div class="form-group col-md-5">
                     <label for="Merk">Merk</label>

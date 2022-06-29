@@ -194,7 +194,7 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>ID Supplier</th>
+                        <th>Supplier</th>
                         <th>Product</th>						
                         <th>Kategori</th>
                         <th>Merk</th>

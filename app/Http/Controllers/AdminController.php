@@ -51,7 +51,7 @@ class AdminController extends Controller
     function datapenjualan()
     {
         $dataPenjualan = Transaksi::all();
-        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->paginate(3);
+        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->paginate(5);
         return view('AdminView.dataPenjualan',['tittle' => 'Data Penjualan',
             'dataPenjualan' => $dataPenjualan,
         ]);
@@ -81,7 +81,7 @@ class AdminController extends Controller
 
     function cetakDataPenjualan(){
         $dataPenjualan = Transaksi::all();
-        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->paginate(3);
+        $dataPenjualan = Transaksi::with('products')->orderBy('id', 'asc')->get();
         $pdf = PDF::loadView('AdminView.cetakDataPenjualan',['tittle' => 'Data Penjualan',
             'dataPenjualan' => $dataPenjualan,
         ]);
@@ -235,11 +235,4 @@ class AdminController extends Controller
         return view ('HomePage.gallery',['users' => $user]);
       
     }
-
-    public function getpaymenthistory(){
-        $payment=Payment::all();
-
-    }
-
-
 }

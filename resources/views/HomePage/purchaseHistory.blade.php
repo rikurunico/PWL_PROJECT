@@ -185,8 +185,8 @@ $(document).ready(function(){
                         <h2>Laporan Transaksi Saya</h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="{{route('CreateProduct')}}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                        <a href="{{ route('CetakDataProduct') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
+                        <a href="/gallery" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Belanja Lagi</span></a>
+                        <a href="{{ route('CetakPurchaseHistory') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>						
                     </div>
                 </div>
             </div>
@@ -204,21 +204,22 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                     <tbody>
-                        @foreach($payment as $payment)
+                        @foreach($payment as $p)
                         <tr>
-                            <td> {{$payment->transaksi->id}}</td>
-                            <td> {{$payment->transaksi->products->product}}
-                            <td> {{$payment->Transaksi->products->harga}}</td>
-                            <td> {{$payment->transaksi->qty}}</td>                                   
-                            <td> {{$payment->transaksi->Tanggal_beli}}</td>
-                            <td> {{$payment->total_bayar}}</td>
-                            <td> {{$payment->transaksi->note}}</td>
+                            <td> {{$p->transaksi->id}}</td>
+                            <td> {{$p->transaksi->products->product}}
+                            <td> {{$p->Transaksi->products->harga}}</td>
+                            <td> {{$p->transaksi->qty}}</td>                                   
+                            <td> {{$p->transaksi->Tanggal_beli}}</td>
+                            <td> {{$p->total_bayar}}</td>
+                            <td> {{$p->transaksi->note}}</td>
                             <td>
-                                <a href="{{ route('EditPurchase', $payment->id) }}" class="btn btn-md btn-warning">Edit</a>
-                                <a href="{{ route('DeletePurchase', $payment->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
+                                <a href="{{ route('EditPurchase', $p->transaksi->id) }}" class="btn btn-md btn-warning">Edit</a>
+                                <a href="{{ route('DeletePurchase', $p->transaksi->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                             </td>
                         </tr> 
                         @endforeach
+                        {{$payment->links()}}
                     </tbody>
             </table>
         </div>
