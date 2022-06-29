@@ -29,8 +29,8 @@ class ProductController extends Controller
         'product' => 'required',
         'kategori' => ['required'],
         'merk' => ['required'],
-        'stok' => 'required',
-        'harga' => 'required',
+        'stok' => 'required|numeric',
+        'harga' => 'required|numeric',
         'gambar'=>'required',
         'supplier'=>'required',
         ]);
@@ -74,8 +74,8 @@ class ProductController extends Controller
             'product' => 'required',
             'kategori' => 'required',
             'merk' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
+            'stok' => 'required|numeric',
+            'harga' => 'required|numeric',
             'gambar' => 'required',
             'supplier' => 'required',
             ]);
